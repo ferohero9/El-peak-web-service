@@ -1,0 +1,954 @@
+/* ============================================================
+   BUNYAN CONTRACTING — demo template by El-Peak
+   Charcoal / amber industrial one-pager.
+   DARK-ONLY theme (no light mode — that is the identity).
+   Vanilla CSS, system fonts only, no CDNs. Mobile-first.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Design tokens
+   ------------------------------------------------------------ */
+:root {
+  color-scheme: dark; /* dark native controls: selects, scrollbars */
+
+  /* Surfaces + ink */
+  --bg: #17181A;            /* page charcoal */
+  --panel: #1F2124;         /* panels */
+  --raised: #26282B;        /* raised surfaces / inputs */
+  --near-black: #0E0F10;    /* banner + footer */
+  --ink: #F2F1EC;           /* primary text */
+  --muted: #A8A69E;         /* secondary text — AA on charcoal */
+
+  /* Amber + steel */
+  --amber: #F5A623;
+  --amber-hover: #FFB93D;
+  --amber-ink: #1A1509;     /* text on amber */
+  --steel: rgba(242, 241, 236, 0.12);
+  --steel-strong: rgba(242, 241, 236, 0.24);
+  --success: #4ADE80;
+  --coral: #FF8A7A;         /* form errors */
+
+  /* Hazard stripe accent (6px strips: hero top + above footer) */
+  --hazard: repeating-linear-gradient(45deg, #F5A623 0 10px, #17181A 10px 20px);
+
+  /* Typography */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Shape + layout */
+  --radius: 4px;            /* sharp industrial corners */
+  --container: 1160px;
+  --header-h: 64px;
+  --shadow-header: 0 10px 28px rgba(0, 0, 0, 0.42);
+}
+
+/* ------------------------------------------------------------
+   2. Reset + base
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Smooth in-page scrolling only for users who allow motion */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;   /* sticky footer pattern */
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { flex: 1 0 auto; }
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.06;
+}
+
+p { margin: 0; }
+
+ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+
+a { color: var(--amber); }
+
+button { font: inherit; }
+
+[hidden] { display: none !important; } /* hidden always wins */
+
+::selection { background: var(--amber); color: var(--amber-ink); }
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Anchored sections clear the sticky header */
+section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
+
+/* ------------------------------------------------------------
+   3. Utilities
+   ------------------------------------------------------------ */
+.container {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+}
+
+/* Mono labels are the identity marker of this template */
+.mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kicker {
+  color: var(--amber);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 14px;
+}
+
+.section { padding-block: clamp(60px, 9vw, 104px); }
+
+.section-head { max-width: 640px; margin-bottom: clamp(32px, 5vw, 52px); }
+
+.section-head h2 { font-size: clamp(2rem, 4.6vw, 3rem); }
+
+.section-sub { color: var(--muted); margin-top: 14px; font-size: 1rem; }
+
+/* 6px hazard stripe strip */
+.hazard {
+  height: 6px;
+  background: var(--hazard);
+}
+
+/* ------------------------------------------------------------
+   4. Skip link
+   ------------------------------------------------------------ */
+.skip-link {
+  position: absolute;
+  top: -56px;
+  left: 16px;
+  z-index: 300;
+  padding: 12px 18px;
+  background: var(--amber);
+  color: var(--amber-ink);
+  font-weight: 800;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus { top: 12px; }
+
+/* ------------------------------------------------------------
+   5. Demo banner strip
+   ------------------------------------------------------------ */
+.demo-banner {
+  background: var(--near-black);
+  border-bottom: 1px solid var(--steel);
+}
+
+.demo-banner-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 20px;
+  padding-block: 10px;
+  text-align: center;
+}
+
+.demo-banner-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.demo-banner-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--amber);
+  text-decoration: none;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.demo-banner-link:hover { color: var(--amber-hover); text-decoration: underline; }
+
+/* ------------------------------------------------------------
+   6. Header — sticky, charcoal panel, steel bottom border
+   ------------------------------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(31, 33, 36, 0.78);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--steel);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  background: var(--panel);
+  box-shadow: var(--shadow-header);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  min-height: 44px;
+}
+
+.brand-mark { color: var(--amber); flex-shrink: 0; }
+
+.brand-text {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.15rem;
+}
+
+.site-nav { margin-left: auto; }
+
+.nav-list { display: flex; gap: 2px; }
+
+.nav-link {
+  display: block;
+  padding: 12px 10px;
+  min-height: 44px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible { color: var(--ink); border-bottom-color: var(--amber); }
+
+.header-cta { margin-left: 4px; }
+
+/* Hamburger — visible below 768px only */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--steel-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.nav-toggle:hover { border-color: var(--amber); color: var(--amber); }
+
+.nav-toggle .icon { width: 22px; height: 22px; }
+.nav-toggle .icon-close { display: none; }
+
+.site-header.nav-open .nav-toggle .icon-burger { display: none; }
+.site-header.nav-open .nav-toggle .icon-close { display: block; }
+
+@media (max-width: 767.98px) {
+  .header-cta { display: none; } /* keep the bar uncluttered on phones */
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: var(--panel);
+    border-bottom: 1px solid var(--steel-strong);
+    box-shadow: var(--shadow-header);
+    padding: 6px 20px 14px;
+  }
+
+  .site-header.nav-open .site-nav { display: block; }
+
+  .nav-list { flex-direction: column; gap: 0; }
+
+  .nav-link {
+    padding: 15px 4px;
+    min-height: 48px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--steel);
+  }
+
+  .nav-list li:last-child .nav-link { border-bottom: none; }
+}
+
+@media (min-width: 768px) {
+  .nav-toggle { display: none; }
+}
+
+/* ------------------------------------------------------------
+   7. Buttons — sharp corners, uppercase, 44px+ targets
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn .icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+.btn-lg { min-height: 54px; padding: 14px 30px; font-size: 0.875rem; }
+
+.btn-block { width: 100%; }
+
+.btn-amber { background: var(--amber); color: var(--amber-ink); }
+.btn-amber:hover { background: var(--amber-hover); }
+.btn-amber:active { transform: translateY(1px); }
+
+.btn-steel {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--steel-strong);
+}
+.btn-steel:hover,
+.btn-steel:focus-visible { border-color: var(--amber); color: var(--amber); }
+
+/* ------------------------------------------------------------
+   8. Hero — full-bleed photo + charcoal overlay + hazard strip
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(92vh, 800px);
+  isolation: isolate;
+}
+
+.hero::before {
+  /* hazard stripe on the hero's top edge */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--hazard);
+  z-index: 3;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(23, 24, 26, 0.78) 0%, rgba(23, 24, 26, 0.3) 55%, rgba(23, 24, 26, 0.45) 100%),
+    linear-gradient(180deg, rgba(23, 24, 26, 0.55) 0%, rgba(23, 24, 26, 0.28) 42%, rgba(23, 24, 26, 0.94) 100%);
+}
+
+.hero-content { padding-block: 120px 64px; }
+
+.hero h1 {
+  font-size: clamp(2.7rem, 8vw, 5.4rem);
+  max-width: 12ch;
+}
+
+.hero-sub {
+  color: var(--muted);
+  max-width: 560px;
+  margin-top: 20px;
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.hero-stats {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--steel-strong);
+  font-size: 0.78rem;
+  color: var(--ink);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.hero-stats strong { color: var(--amber); font-weight: 700; }
+
+/* ------------------------------------------------------------
+   9. Services — numbered cards, amber hover border-top
+   ------------------------------------------------------------ */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.service-card {
+  background: var(--panel);
+  border: 1px solid var(--steel);
+  border-top: 3px solid transparent;
+  border-radius: var(--radius);
+  padding: 24px 22px 22px;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  border-top-color: var(--amber);
+  background: var(--raised);
+  transform: translateY(-3px);
+}
+
+.service-index {
+  font-family: var(--font-mono);
+  color: var(--amber);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.service-card h3 {
+  margin: 16px 0 8px;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.service-desc { color: var(--muted); font-size: 0.92rem; }
+
+/* No-JS fallback list */
+.services-fallback li {
+  background: var(--panel);
+  border: 1px solid var(--steel);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 14px;
+}
+
+.services-fallback h3 { font-size: 1rem; }
+.services-fallback p { color: var(--muted); font-size: 0.92rem; margin-top: 6px; }
+
+/* ------------------------------------------------------------
+   10. Projects — masonry-ish columns + mono caption bars
+   ------------------------------------------------------------ */
+.projects {
+  background: var(--panel);
+  border-top: 1px solid var(--steel);
+  border-bottom: 1px solid var(--steel);
+}
+
+.projects-grid { columns: 1; column-gap: 22px; }
+
+.project-card {
+  break-inside: avoid;
+  background: var(--panel);
+  border: 1px solid var(--steel);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.project-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--raised); /* placeholder tone while photos load */
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.project-media:hover img,
+.project-media:focus-visible img { transform: scale(1.04); }
+
+.ratio-45 { aspect-ratio: 4 / 5; }
+.ratio-43 { aspect-ratio: 4 / 3; }
+.ratio-11 { aspect-ratio: 1 / 1; }
+
+/* Amber overlay chip on hover / keyboard focus */
+.project-chip {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translate(-50%, 8px);
+  background: var(--amber);
+  color: var(--amber-ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.project-media:hover .project-chip,
+.project-media:focus-visible .project-chip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Touch devices: keep the chip visible (no hover to rely on) */
+@media (hover: none) {
+  .project-chip { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.project-caption {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  padding: 13px 16px;
+  border-top: 1px solid var(--steel);
+}
+
+/* ------------------------------------------------------------
+   11. Process — 3 steps + connecting steel line + team card
+   ------------------------------------------------------------ */
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  counter-reset: step;
+}
+
+.process-step { position: relative; }
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--panel);
+  border: 1px solid var(--steel-strong);
+  border-radius: var(--radius);
+  color: var(--amber);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step h3 {
+  margin: 16px 0 8px;
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+}
+
+.process-step p:not(.step-num) { color: var(--muted); font-size: 0.94rem; }
+
+@media (min-width: 768px) {
+  .process-steps { grid-template-columns: repeat(3, 1fr); gap: 26px; }
+
+  /* connecting steel line through the number badges */
+  .process-steps::before {
+    content: "";
+    position: absolute;
+    top: 24px; /* center of the 48px badge */
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background: var(--steel-strong);
+  }
+
+  .process-step { padding-right: 10px; }
+}
+
+.team-card {
+  margin-top: clamp(40px, 6vw, 60px);
+  border: 1px solid var(--steel);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.team-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+
+.team-caption {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  padding: 13px 16px;
+  border-top: 1px solid var(--steel);
+}
+
+/* ------------------------------------------------------------
+   12. Contact — two-panel grid + industrial form
+   ------------------------------------------------------------ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--steel);
+  border-radius: var(--radius);
+  padding: clamp(22px, 4vw, 32px);
+}
+
+.contact-heading {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.contact-rows { margin-top: 8px; }
+
+.contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--steel);
+}
+
+.contact-row:first-child { padding-top: 6px; }
+.contact-row:last-child { border-bottom: none; }
+
+.contact-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.contact-value {
+  font-weight: 700;
+  font-size: 0.98rem;
+  overflow-wrap: anywhere;
+}
+
+a.contact-value { color: var(--ink); text-decoration: none; }
+a.contact-value:hover { color: var(--amber); text-decoration: underline; }
+
+.contact-note {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--steel);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* Form fields — steel borders on dark, visible text */
+.form-row { display: grid; grid-template-columns: 1fr; gap: 0 16px; }
+
+.field { margin-bottom: 18px; }
+
+.field-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.label-optional { color: var(--muted); letter-spacing: 0.1em; }
+
+.field-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  background: var(--raised);
+  border: 1px solid var(--steel-strong);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+textarea.field-input { min-height: 128px; resize: vertical; }
+
+.field-input::placeholder { color: rgba(168, 166, 158, 0.66); }
+
+.field-input:hover { border-color: rgba(242, 241, 236, 0.36); }
+
+.field-input:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+  border-color: var(--amber);
+}
+
+/* Invalid state — coral */
+.field-input.is-invalid { border-color: var(--coral); }
+
+.field-error {
+  margin-top: 7px;
+  color: var(--coral);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.form-hint {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+@media (min-width: 640px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* ------------------------------------------------------------
+   13. Success panel (demo submit result)
+   ------------------------------------------------------------ */
+.success-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.success-check {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  color: var(--steel-strong);   /* steel ring… */
+}
+
+.success-check path { stroke: var(--ink); } /* …with an ink check */
+
+.success-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--success);
+  font-weight: 700;
+}
+
+.success-lede { color: var(--muted); font-size: 0.94rem; margin-bottom: 12px; }
+
+.lead-preview {
+  margin: 0 0 18px;
+  padding: 16px;
+  background: var(--bg);
+  border: 1px dashed var(--steel-strong);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--ink);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.success-note {
+  border: 1px dashed var(--amber);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+
+.success-note a { color: var(--amber); font-weight: 700; text-decoration: none; }
+.success-note a:hover { color: var(--amber-hover); text-decoration: underline; }
+
+/* ------------------------------------------------------------
+   14. Toast
+   ------------------------------------------------------------ */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 14px);
+  z-index: 200;
+  max-width: min(92vw, 420px);
+  padding: 13px 18px;
+  background: var(--raised);
+  color: var(--ink);
+  border: 1px solid var(--steel-strong);
+  border-left: 3px solid var(--amber);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  box-shadow: var(--shadow-header);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ------------------------------------------------------------
+   15. Footer — near-black + mono small text
+   ------------------------------------------------------------ */
+.site-footer { background: var(--near-black); }
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 28px;
+  padding-block: 26px;
+}
+
+.footer-line {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.footer-brand-link { color: var(--amber); text-decoration: none; }
+.footer-brand-link:hover { color: var(--amber-hover); text-decoration: underline; }
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+.footer-nav a {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 8px 0; /* 44px row height with line box */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-nav a:hover { color: var(--amber); }
+
+/* ------------------------------------------------------------
+   16. Reveal-on-scroll (gated behind html.js)
+   ------------------------------------------------------------ */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* gentle stagger for service cards */
+.js .services-grid .reveal:nth-child(2) { transition-delay: 0.05s; }
+.js .services-grid .reveal:nth-child(3) { transition-delay: 0.1s; }
+.js .services-grid .reveal:nth-child(4) { transition-delay: 0.15s; }
+.js .services-grid .reveal:nth-child(5) { transition-delay: 0.2s; }
+.js .services-grid .reveal:nth-child(6) { transition-delay: 0.25s; }
+
+/* ------------------------------------------------------------
+   17. Larger screens
+   ------------------------------------------------------------ */
+@media (min-width: 640px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-content { padding-block: 140px 76px; }
+}
+
+@media (min-width: 768px) {
+  .projects-grid { columns: 2; }
+}
+
+@media (min-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .contact-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .header-inner { gap: 26px; }
+}
+
+/* ------------------------------------------------------------
+   18. Reduced motion — show everything, kill transitions
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-media:hover img,
+  .project-media:focus-visible img { transform: none; }
+}

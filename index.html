@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- ============================================================
+       El-Peak — Main Agency Landing Page
+       Glassmorphic light/dark design. Static, cPanel-ready,
+       no frameworks. Vanilla HTML/CSS/JS only.
+       ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El-Peak — Custom Websites for Local Businesses</title>
+  <meta name="description" content="El-Peak builds fast, ethical, affordable custom websites for halal-conscious local businesses in Egypt — designed with top-of-the-line AI, reviewed before sending to client. One-time build from 1,500 EGP, orders go straight to your WhatsApp, zero aggregator commissions, standard cPanel hosting.">
+  <meta name="theme-color" content="#6c5ce7">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="El-Peak — Custom Websites for Local Businesses">
+  <meta property="og:description" content="Fast, ethical, affordable websites for local businesses — AI-assisted builds, one-time EGP pricing, WhatsApp ordering, cPanel hosting.">
+  <meta property="og:image" content="demos/restaurant/assets/r-hero.jpg">
+
+  <!-- Inline SVG favicon (El-Peak twin-peak "M" mark, blue→purple gradient, no external file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='9' y1='50' x2='54' y2='32' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233d2ee6'/%3E%3Cstop offset='.5' stop-color='%237447ec'/%3E%3Cstop offset='1' stop-color='%23a95ef5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff' stroke='%23d9d6f2' stroke-width='2'/%3E%3Cpath d='M9.3 50 L25.6 15 L33.9 36.5 L41.3 19.8 L53.4 50' fill='none' stroke='url(%23g)' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Pre-paint theme restore (prevents flash of wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('elpeak-theme');
+        var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) { /* private mode — default light */ }
+    })();
+  </script>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured data for SEO (ProfessionalService) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "El-Peak",
+    "description": "Custom static websites for halal-conscious local businesses in Egypt — designed and coded with top-of-the-line AI, reviewed before sending to client. One-time build fee 1,500 EGP, direct-to-WhatsApp ordering, zero aggregator commissions, standard cPanel hosting.",
+    "areaServed": "Egypt",
+    "priceRange": "EGP 1,500 – 5,000"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+       1. HEADER — floating glassmorphic pill navbar
+       ============================================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-shell">
+      <a href="#home" class="logo" aria-label="El-Peak — back to top">
+        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="lpGradHeader" x1="14" y1="78" x2="84" y2="48" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#3d2ee6"/>
+              <stop offset="0.5" stop-color="#7447ec"/>
+              <stop offset="1" stop-color="#a95ef5"/>
+            </linearGradient>
+          </defs>
+          <path d="M14.5 78 L40 23.5 L53 57 L64.5 31 L83.5 78" fill="none" stroke="url(#lpGradHeader)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">El-Peak</span>
+      </a>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#demos">Demos</a></li>
+          <li><a class="nav-link" href="#hosting">Hosting</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-cta" data-wa href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20a%20website%20for%20my%20business" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
+          <span class="nav-cta-label">WhatsApp</span>
+        </a>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme" aria-pressed="false">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.3 4.3l1.7 1.7M18 18l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.3 19.7L6 18M18 6l1.7-1.7"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================================================
+         2. HERO — eyebrow + display headline + score card + stat row
+         ============================================================ -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Web Design Studio · Egypt</p>
+          <h1 id="heroTitle">Custom Websites for Local Businesses — <span class="grad">Pay Once, Own Forever</span></h1>
+          <p class="hero-sub">
+            Menus, service catalogs and online shops for restaurants, clinics, stores and
+            workshops — <strong>built with top-of-the-line AI, reviewed before sending to client.</strong>
+            Orders go straight to your WhatsApp with zero aggregator commissions.
+            One-time payment, standard cPanel hosting.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" data-wa href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20a%20website%20for%20my%20business" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
+              Start on WhatsApp
+            </a>
+            <a class="btn btn-glass btn-lg" href="#demos">
+              View Demo Templates
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Glass score card — mirrors the "Peak Score" widget -->
+        <aside class="hero-side reveal" aria-label="Studio highlights">
+          <div class="score-card" id="scoreCard">
+            <svg class="ring" viewBox="0 0 72 72" aria-hidden="true">
+              <circle class="ring-track" cx="36" cy="36" r="30" fill="none" stroke-width="6"/>
+              <circle class="ring-arc" id="ringArc" cx="36" cy="36" r="30" fill="none" stroke-width="6" stroke-linecap="round" transform="rotate(-90 36 36)"/>
+            </svg>
+            <div class="score-meta">
+              <p class="score-num">99.9<span class="score-pct">%</span></p>
+              <p class="score-label">Host-backed uptime</p>
+            </div>
+          </div>
+          <ul class="hero-chips" aria-label="Quick facts">
+            <li class="chip">0% commissions</li>
+            <li class="chip chip-teal">Halal-ethical only</li>
+            <li class="chip">You own the files</li>
+            <li class="chip chip-teal">Built with top-tier AI</li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Stat cards row -->
+      <div class="container">
+        <dl class="stat-row reveal" aria-label="Studio track record">
+          <div class="stat-card"><dt class="stat-num">7 days</dt><dd class="stat-label">Average build</dd></div>
+          <div class="stat-card"><dt class="stat-num">0%</dt><dd class="stat-label">Aggregator commissions</dd></div>
+          <div class="stat-card"><dt class="stat-num">100%</dt><dd class="stat-label">Reviewed before delivery</dd></div>
+          <div class="stat-card"><dt class="stat-num">24/7</dt><dd class="stat-label">Order taking</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. SERVICE OFFERINGS (4-column responsive glass grid)
+         ============================================================ -->
+    <section class="section" id="services" aria-labelledby="servicesTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Services</p>
+          <h2 id="servicesTitle">What we build</h2>
+          <p class="section-sub">Every project is a fast static website — built with top-of-the-line AI tools, then thoroughly reviewed line-by-line before sending to client. No databases, no monthly fees.</p>
+        </header>
+
+        <div class="grid grid-4">
+          <!-- Service 1: WhatsApp Menus -->
+          <article class="card service-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16a1 1 0 0 1 1 1v13H3V4a1 1 0 0 1 1-1z"/><path d="M8 8h8M8 12h5"/><path d="M3 17l4 4h10l4-4"/><path d="M12 17v3"/></svg>
+            </div>
+            <h3>Direct-to-WhatsApp Menus</h3>
+            <p>Interactive ordering menus for restaurants, cafés, bakeries and food trucks. Customers pick their items and the order arrives as a ready-to-send WhatsApp message.</p>
+            <ul class="check-list">
+              <li>Order cart — zero database required</li>
+              <li>Works on basic shared hosting</li>
+              <li>Easy price &amp; item updates</li>
+            </ul>
+            <a class="card-cta" href="./demos/restaurant/index.html">Try the restaurant demo
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 2: Catalogs & Appointments -->
+          <article class="card service-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/><path d="M9.5 15.5l1.8 1.8 3.4-3.4"/></svg>
+            </div>
+            <h3>Service Catalogs &amp; Appointments</h3>
+            <p>Professional listings with transparent pricing and direct booking requests for clinics, gyms, auto repair shops, tutoring centers and tailors.</p>
+            <ul class="check-list">
+              <li>Booking requests via WhatsApp</li>
+              <li>Clear service &amp; price lists</li>
+              <li>Simple enquiry forms</li>
+            </ul>
+            <a class="card-cta" href="./demos/clinic/index.html">Try the clinic demo
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 3: Local E-Commerce -->
+          <article class="card service-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7V6a6 6 0 0 1 12 0v1"/><path d="M4 7h16l-1.2 12.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8z"/><path d="M9 11a3 3 0 0 0 6 0"/></svg>
+            </div>
+            <h3>Online Shops &amp; Catalogs</h3>
+            <p>Fast storefronts for phone &amp; electronics shops, home appliances, perfumes and handicrafts — with search, filters and an order cart that messages you on WhatsApp.</p>
+            <ul class="check-list">
+              <li>Search, brand &amp; price filters</li>
+              <li>Product galleries &amp; stock badges</li>
+              <li>No payment gateway fees</li>
+            </ul>
+            <a class="card-cta" href="./demos/electronics/index.html">Try the electronics shop demo
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Service 4: Corporate Landing Pages -->
+          <article class="card service-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M15 9h3a2 2 0 0 1 2 2v10"/><path d="M9 7h2M9 11h2M9 15h2"/></svg>
+            </div>
+            <h3>Landing Pages &amp; Portfolios</h3>
+            <p>One-page professional sites for logistics companies, IT consultants, interior designers and contracting firms — built to collect quality leads.</p>
+            <ul class="check-list">
+              <li>Lead collection forms</li>
+              <li>Google Maps &amp; service areas</li>
+              <li>Contact details front &amp; center</li>
+            </ul>
+            <a class="card-cta" href="./demos/contractor/index.html">Try the contractor demo
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+
+        <!-- AI-assisted build note -->
+        <aside class="card ai-note reveal" aria-label="How we build">
+          <div class="ai-note__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"/><path d="M19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9z"/><path d="M5 15l.7 1.6L7.3 17.3l-1.6.7L5 19.6l-.7-1.6L2.7 17.3l1.6-.7z"/></svg>
+          </div>
+          <div>
+            <h3>Built with top-of-the-line AI — reviewed before sending to client</h3>
+            <p>Every El-Peak website is designed, written and coded with the help of state-of-the-art AI tools, then thoroughly reviewed line-by-line before sending to client — premium quality at a price a local business can afford.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. INTERACTIVE LIVE DEMO GALLERY (filter tabs + preview modal)
+         ============================================================ -->
+    <section class="section section-alt" id="demos" aria-labelledby="demosTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Live demos</p>
+          <h2 id="demosTitle">Live demo templates</h2>
+          <p class="section-sub">Fully interactive templates, each with its own design and color identity. Open one and imagine it with your brand and prices.</p>
+        </header>
+
+        <!-- Filter tabs (pill style, like the navbar) -->
+        <div class="demo-tabs reveal" role="tablist" aria-label="Filter demos by type">
+          <button class="demo-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all">All demos</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="food">Food &amp; Drink</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="retail">Retail &amp; Shops</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="health">Health &amp; Services</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="corporate">Corporate</button>
+        </div>
+
+        <div class="grid grid-2 demo-grid" id="demoGrid">
+          <!-- Demo card: Restaurant -->
+          <article class="card demo-card reveal" data-category="food">
+            <a class="demo-thumb" href="./demos/restaurant/index.html" target="_blank" rel="noopener" aria-label="Open Restaurant WhatsApp Menu live demo">
+              <img src="demos/restaurant/assets/r-hero.jpg" alt="Preview of the restaurant demo: a warm Middle-Eastern dining table filled with grilled meats, mezze and fresh sides" width="1200" height="800" loading="lazy">
+              <span class="demo-tag tag-food">Interactive cart</span>
+            </a>
+            <div class="demo-body">
+              <h3>Restaurant WhatsApp Menu</h3>
+              <p>A full digital menu with categories, photos, prices and an order cart that turns selections into a neat WhatsApp order message.</p>
+              <div class="demo-actions">
+                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/restaurant/index.html" data-demo-title="Restaurant WhatsApp Menu">Quick preview</button>
+                <a class="btn btn-glass btn-sm" href="./demos/restaurant/index.html" target="_blank" rel="noopener">View live demo
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Demo card: Electronics shop -->
+          <article class="card demo-card reveal" data-category="retail">
+            <a class="demo-thumb" href="./demos/electronics/index.html" target="_blank" rel="noopener" aria-label="Open Electronics &amp; Phones Shop live demo">
+              <img src="demos/electronics/assets/e-hero.jpg" alt="Preview of the electronics shop demo: a sleek smartphone on a dark studio background with lime accent lighting" width="1200" height="800" loading="lazy">
+              <span class="demo-tag tag-retail">Cart + filters</span>
+            </a>
+            <div class="demo-body">
+              <h3>Electronics &amp; Phones Shop</h3>
+              <p>A fast online storefront for phone and electronics shops — search, brand &amp; category filters, stock badges and a cart that turns orders into a WhatsApp message.</p>
+              <div class="demo-actions">
+                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/electronics/index.html" data-demo-title="Electronics &amp; Phones Shop">Quick preview</button>
+                <a class="btn btn-glass btn-sm" href="./demos/electronics/index.html" target="_blank" rel="noopener">View live demo
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Demo card: Clinic -->
+          <article class="card demo-card reveal" data-category="health">
+            <a class="demo-thumb" href="./demos/clinic/index.html" target="_blank" rel="noopener" aria-label="Open Clinic Appointments Page live demo">
+              <img src="demos/clinic/assets/c-hero.jpg" alt="Preview of the clinic demo: a bright modern dental clinic with a clean treatment chair" width="1200" height="800" loading="lazy">
+              <span class="demo-tag tag-health">Booking form</span>
+            </a>
+            <div class="demo-body">
+              <h3>Clinic Appointments Page</h3>
+              <p>Services with transparent pricing and an appointment request form that sends patient details to the clinic's WhatsApp.</p>
+              <div class="demo-actions">
+                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/clinic/index.html" data-demo-title="Clinic Appointments Page">Quick preview</button>
+                <a class="btn btn-glass btn-sm" href="./demos/clinic/index.html" target="_blank" rel="noopener">View live demo
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Demo card: Contractor -->
+          <article class="card demo-card reveal" data-category="corporate">
+            <a class="demo-thumb" href="./demos/contractor/index.html" target="_blank" rel="noopener" aria-label="Open Contractor Landing Page live demo">
+              <img src="demos/contractor/assets/x-hero.jpg" alt="Preview of the contracting company demo: a construction site with scaffolding at golden hour" width="1200" height="800" loading="lazy">
+              <span class="demo-tag tag-corporate">Lead capture</span>
+            </a>
+            <div class="demo-body">
+              <h3>Contractor Landing Page</h3>
+              <p>A confident one-page site for contracting and service companies: portfolio, service areas, and a lead form wired to WhatsApp.</p>
+              <div class="demo-actions">
+                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/contractor/index.html" data-demo-title="Contractor Landing Page">Quick preview</button>
+                <a class="btn btn-glass btn-sm" href="./demos/contractor/index.html" target="_blank" rel="noopener">View live demo
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. CPANEL & TECH SPECS
+         ============================================================ -->
+    <section class="section" id="hosting" aria-labelledby="hostingTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Simple technology</p>
+          <h2 id="hostingTitle">Built for standard cPanel hosting</h2>
+          <p class="section-sub">Your website is a set of lightweight files. Upload them once to any shared host — Hostinger, Namecheap and similar — and it works.</p>
+        </header>
+
+        <div class="grid grid-3">
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>99.9% uptime</h3><p>Your host's guarantee keeps the site online around the clock.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Free SSL (HTTPS)</h3><p>Let's Encrypt certificates via cPanel — secure and trusted by visitors.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Zero maintenance</h3><p>No plugins, no databases, nothing to update or break.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Custom domain email</h3><p>Look professional with addresses like info@yourbusiness.com.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>24/7 host support</h3><p>Your hosting provider handles server issues — we handle the website.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Automatic backups</h3><p>cPanel and most hosts back up your files regularly.</p></div></div>
+        </div>
+
+        <!-- 3-step process -->
+        <div class="steps reveal" aria-label="How it works in three steps">
+          <div class="step"><span class="step-num">1</span><h3>Choose a package</h3><p>Tell us about your business on WhatsApp — we'll recommend the right fit.</p></div>
+          <div class="step"><span class="step-num">2</span><h3>We build &amp; deploy</h3><p>We design the site, upload it to your cPanel and test everything with you.</p></div>
+          <div class="step"><span class="step-num">3</span><h3>You own it forever</h3><p>The files are yours — one-time payment, lifetime use.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. PRICING & PACKAGES (one-time fees, no interest-based plans)
+         ============================================================ -->
+    <section class="section section-alt" id="pricing" aria-labelledby="pricingTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Honest pricing</p>
+          <h2 id="pricingTitle">Pay once. Own it forever.</h2>
+          <p class="section-sub">One transparent build fee — plus two flat add-ons: annual hosting &amp; domain, and on-demand updates whenever your content changes. No monthly retainers, no interest-based installments.</p>
+        </header>
+
+        <div class="grid grid-2 pricing-grid">
+          <!-- Package 1 — ACTIVE TIER -->
+          <article class="card price-card is-featured reveal" aria-label="Complete Static Website package">
+            <span class="featured-tag">Available now</span>
+            <h3>Package 1 — Complete Static Website</h3>
+            <p class="price"><span class="currency">EGP</span><span class="amount">1,500</span><span class="period">one-time build fee</span></p>
+            <p class="price-note">Best for restaurants, cafés, retail shops, clinics, service catalogs and local small businesses.</p>
+            <ul class="check-list">
+              <li>1-page custom responsive, mobile-first static layout</li>
+              <li>Interactive WhatsApp ordering &amp; inquiry system — pre-filled messages with selected items, subtotal, customer notes &amp; delivery address</li>
+              <li>Category filtering and out-of-stock item management via JS</li>
+              <li>Integrated Google Maps location, social links &amp; contact buttons</li>
+              <li>Built to run smoothly on cPanel shared hosting</li>
+              <li>Zero aggregator commissions — every order goes directly to you</li>
+            </ul>
+            <p class="price-addon-note">Hosting &amp; domain billed separately: <strong>500 EGP/year</strong> — see add-ons below.</p>
+            <a class="btn btn-primary btn-block" data-wa data-wa-message="Hi! I'm interested in the Complete Static Website package (1,500 EGP one-time build fee)." href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20the%20Complete%20Static%20Website%20package" target="_blank" rel="noopener">Start your website on WhatsApp</a>
+          </article>
+
+          <!-- Package 2 — COMING SOON (faded card + prominent overlay badge) -->
+          <div class="soon-wrap reveal">
+            <article class="card price-card is-soon" aria-label="Dynamic Admin Portal and Custom Backend package — coming soon">
+              <h3>Package 2 — Dynamic Admin Portal &amp; Custom Backend</h3>
+              <p class="price"><span class="currency">EGP</span><span class="amount">5,000</span><span class="period">one-time</span></p>
+              <p class="price-note">For larger businesses that need live dashboards, databases and online payments.</p>
+              <ul class="check-list">
+                <li>Live multi-tenant dashboards</li>
+                <li>Customer database management</li>
+                <li>Automated order tracking</li>
+                <li>Live online payment gateways (Paymob / Kashier)</li>
+              </ul>
+              <button class="btn btn-glass btn-block" type="button" disabled>Not available yet</button>
+            </article>
+            <span class="soon-badge" aria-hidden="true">Coming soon</span>
+          </div>
+        </div>
+
+        <!-- Flat-rate add-ons (billed separately for every website) -->
+        <div class="grid grid-2 addons-grid">
+          <article class="card addon-card reveal" aria-label="Annual hosting and domain add-on">
+            <div class="addon-head">
+              <span class="addon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+              </span>
+              <div>
+                <h3>Annual Hosting &amp; Domain</h3>
+                <p class="addon-price"><strong>500 EGP</strong> <span>/ year</span></p>
+              </div>
+            </div>
+            <p class="addon-note">Billed separately for all websites.</p>
+            <ul class="check-list">
+              <li>High-speed cPanel web hosting setup</li>
+              <li>Custom domain registration / renewal (.com or local)</li>
+              <li>Free SSL certificate installation</li>
+              <li>Custom business email — info@yourbusiness.com</li>
+            </ul>
+          </article>
+
+          <article class="card addon-card reveal" aria-label="On-demand content update add-on">
+            <div class="addon-head">
+              <span class="addon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              </span>
+              <div>
+                <h3>On-Demand Content Updates</h3>
+                <p class="addon-price"><strong>400 EGP</strong> <span>/ update request</span></p>
+              </div>
+            </div>
+            <p class="addon-note">Per iteration — request only when you need it.</p>
+            <ul class="check-list">
+              <li>Swap menu / catalog photos</li>
+              <li>Update prices &amp; modify text</li>
+              <li>Replace banners</li>
+              <li>Add or remove up to 5 items on request</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="pricing-footnote reveal">All prices in Egyptian Pounds (EGP). Payment is made directly to us — in full or two milestone payments. We never arrange interest-based financing, and we only serve halal-compliant businesses.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. CONTACT SECTION (form composes a WhatsApp message — no backend)
+         ============================================================ -->
+    <section class="section" id="contact" aria-labelledby="contactTitle">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contactTitle">Request a quote</h2>
+          <p>Tell us about your business and we'll reply with a timeline and a quote — usually within a few hours.</p>
+          <ul class="contact-details">
+            <li>
+              <a class="contact-line" href="tel:+201012464714" aria-label="Call +20 101 246 4714 directly">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call: +20 101 246 4714
+              </a>
+            </li>
+            <li>
+              <a class="contact-line" data-wa href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20a%20website%20for%20my%20business" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
+                WhatsApp: +20 101 246 4714
+              </a>
+            </li>
+            <li>
+              <a class="contact-line" href="mailto:el-peak@el-peak.cloud">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                el-peak@el-peak.cloud
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- This form never touches a server: it composes a WhatsApp message -->
+        <form class="card contact-form reveal" id="contactForm" novalidate>
+          <h3>Send a quick brief</h3>
+          <div class="field">
+            <label for="cfName">Your name <span aria-hidden="true">*</span></label>
+            <input id="cfName" name="name" type="text" autocomplete="name" required placeholder="e.g. Ahmed Hassan">
+          </div>
+          <div class="field">
+            <label for="cfType">Business type</label>
+            <select id="cfType" name="type">
+              <option value="Restaurant / Café / Bakery">Restaurant / Café / Bakery</option>
+              <option value="Clinic / Gym / Wellness">Clinic / Gym / Wellness</option>
+              <option value="Shop / E-commerce / Retail">Shop / E-commerce / Retail</option>
+              <option value="Services / Company / Logistics">Services / Company / Logistics</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cfMsg">What do you need? <span aria-hidden="true">*</span></label>
+            <textarea id="cfMsg" name="message" rows="4" required placeholder="e.g. I run a small bakery and want a menu page where customers can order via WhatsApp…"></textarea>
+          </div>
+          <p class="form-hint" id="cfHint" role="status" aria-live="polite"></p>
+          <button class="btn btn-primary btn-block" type="submit">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
+            Send via WhatsApp
+          </button>
+          <p class="form-disclaimer">Opens WhatsApp with your message pre-filled — nothing is stored on any server.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER (sticky-bottom via flex layout)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Back to top">
+          <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="lpGradFooter" x1="14" y1="78" x2="84" y2="48" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#3d2ee6"/>
+                <stop offset="0.5" stop-color="#7447ec"/>
+                <stop offset="1" stop-color="#a95ef5"/>
+              </linearGradient>
+            </defs>
+            <path d="M14.5 78 L40 23.5 L53 57 L64.5 31 L83.5 78" fill="none" stroke="url(#lpGradFooter)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo-text">El-Peak</span>
+        </a>
+        <p>Custom websites for local businesses in Egypt. One-time pricing, zero aggregator commissions, WhatsApp ordering, standard cPanel hosting.</p>
+      </div>
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#demos">Live demos</a></li>
+          <li><a href="#hosting">Why cPanel</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Demo links">
+        <h3>Demos</h3>
+        <ul>
+          <li><a href="./demos/restaurant/index.html">Restaurant menu</a></li>
+          <li><a href="./demos/electronics/index.html">Electronics shop</a></li>
+          <li><a href="./demos/clinic/index.html">Clinic booking</a></li>
+          <li><a href="./demos/contractor/index.html">Contractor page</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h3>Our commitment</h3>
+        <p class="footer-commitment">We only work with businesses that operate ethically and honestly. We do not serve industries involving alcohol, gambling, tobacco or interest-based finance.</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2025</span> El-Peak. All rights reserved.</p>
+      <a href="#home" class="back-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FLOATING WHATSAPP WIDGET (sticky, bottom-right, 56px target)
+       The ONLY real WhatsApp action on this site — demo sites use
+       dummy buttons on purpose.
+       ============================================================ -->
+  <a class="wa-float" data-wa href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20a%20website%20for%20my%20business" target="_blank" rel="noopener" aria-label="Chat with El-Peak on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
+    <span class="wa-tooltip" aria-hidden="true">Chat with us</span>
+  </a>
+
+  <!-- ============================================================
+       DEMO PREVIEW MODAL (loads demo in an iframe)
+       ============================================================ -->
+  <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-panel">
+      <div class="modal-head">
+        <h2 id="modalTitle">Demo preview</h2>
+        <div class="modal-actions">
+          <a class="btn btn-glass btn-sm" id="modalOpenTab" href="#" target="_blank" rel="noopener">Open in new tab</a>
+          <button class="modal-close" type="button" data-modal-close aria-label="Close preview">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal-frame-wrap">
+        <div class="modal-loading" aria-hidden="true"><span class="spinner"></span></div>
+        <iframe id="modalFrame" title="Live demo preview" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main script -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

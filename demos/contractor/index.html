@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       BUNYAN CONTRACTING — demo template by El-Peak
+       "Building with honesty, finishing with care."
+       Charcoal / amber industrial one-pager. DARK-ONLY theme.
+       Static + cPanel-ready: vanilla HTML/CSS/JS, no CDNs,
+       no external fonts. Buttons on this page do NOT send real
+       WhatsApp messages (demo only).
+       ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bunyan Contracting — Construction, Renovations &amp; Fit-Outs in Cairo</title>
+  <meta name="description" content="Bunyan Contracting builds with honesty and finishes with care: new builds, renovations, kitchen &amp; bathroom fit-outs, office fit-outs and maintenance contracts across Greater Cairo. Demo template by El-Peak.">
+  <meta name="theme-color" content="#17181A">
+
+  <!-- Inline SVG favicon: amber hexagon "B" block (no external file) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 3 57 17.5v29L32 61 7 46.5v-29Z' fill='%23F5A623'/%3E%3Cpath d='M24 18v28M24 18h6.5a6 6 0 0 1 0 12H24M24 30h7.5a6.2 6.2 0 0 1 0 12.4H24' fill='none' stroke='%2317181A' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Adds .js to <html> so reveal-on-scroll styles only apply when JS runs -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="stylesheet" href="css/contractor-style.css">
+  <script src="js/contractor-leads.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+       1. DEMO BANNER STRIP
+       ============================================================ -->
+  <div class="demo-banner">
+    <div class="container demo-banner-inner">
+      <p class="demo-banner-text">✦ Live demo template by El-Peak — buttons on this page do NOT send real WhatsApp messages</p>
+      <a class="demo-banner-link" href="../../index.html">← Back to El-Peak</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. STICKY HEADER — charcoal panel, steel bottom border
+       ============================================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Bunyan Contracting — back to top">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <path d="M20 2.5 35.2 11.25v17.5L20 37.5 4.8 28.75v-17.5Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M15.5 12.5v15M15.5 12.5h4.2a3.6 3.6 0 0 1 0 7.2h-4.2M15.5 19.7h4.8a3.9 3.9 0 0 1 0 7.8h-4.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">Bunyan</span>
+      </a>
+
+      <nav class="site-nav" id="primaryNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#process">Process</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-amber header-cta" href="#contact">Get a quote</a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation menu">
+        <svg class="icon icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         3. HERO — full-bleed photo, charcoal overlay, hazard strip
+         ============================================================ -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <img class="hero-img" src="assets/x-hero.jpg" alt="Bunyan Contracting site crew in hard hats working on a reinforced concrete building frame at dusk" width="1920" height="1080" fetchpriority="high">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="kicker mono">Licensed &amp; insured · Cairo</p>
+        <h1 id="heroTitle">We build it right.</h1>
+        <p class="hero-sub">Residential and commercial construction, renovations and fit-outs across Greater Cairo — a fixed quote in writing before we break ground, weekly photo updates while we build, and a 12-month workmanship warranty on every handover.</p>
+        <div class="cta-row">
+          <a class="btn btn-amber btn-lg" href="#contact">Start your project</a>
+          <a class="btn btn-steel btn-lg" href="#projects">See our work</a>
+        </div>
+        <p class="hero-stats mono"><strong>15+</strong> years · <strong>120+</strong> projects · <strong>98%</strong> on-time</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. SERVICES — 6 numbered cards, rendered by JS from SERVICES
+         ============================================================ -->
+    <section class="section services" id="services" aria-labelledby="servicesTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">01 — What we build</p>
+          <h2 id="servicesTitle">Services</h2>
+          <p class="section-sub">Six trades, one accountable crew. Every price is fixed in writing before we break ground — no surprises mid-build.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+          <!-- Cards are rendered here by js/contractor-leads.js -->
+          <noscript>
+            <ul class="services-fallback">
+              <li><h3>New Builds</h3><p>Ground-up residential and commercial construction, engineered to code.</p></li>
+              <li><h3>Renovations &amp; Remodels</h3><p>Full home and unit renovations with honest advice on what is worth changing.</p></li>
+              <li><h3>Kitchen &amp; Bathroom Fit-Outs</h3><p>Tiling, plumbing, joinery and lighting by specialist wet-area crews.</p></li>
+              <li><h3>Office Fit-Outs</h3><p>Partitions, flooring, MEP and joinery — delivered after hours.</p></li>
+              <li><h3>Landscaping &amp; Exteriors</h3><p>Gardens, pergolas and façades built to survive Cairo sun and dust.</p></li>
+              <li><h3>Maintenance Contracts</h3><p>Scheduled preventive maintenance at one fixed monthly cost.</p></li>
+            </ul>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. PROJECTS — masonry-ish photo grid, mono caption bars
+         ✏️ EDIT PROJECTS HERE — swap the img src paths and captions.
+         ============================================================ -->
+    <section class="section projects" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">02 — Recent work</p>
+          <h2 id="projectsTitle">Projects</h2>
+          <p class="section-sub">Recent handovers across Greater Cairo. Every project below was delivered on its fixed quote, on schedule.</p>
+        </div>
+
+        <div class="projects-grid">
+          <figure class="project-card reveal">
+            <a class="project-media" href="#contact" aria-label="Request a similar project: modern villa new build in Sheikh Zayed">
+              <img class="ratio-45" src="assets/x-villa.jpg" alt="Newly built modern villa with a clean stone façade and landscaped driveway in Sheikh Zayed" width="1200" height="1500" loading="lazy">
+              <span class="project-chip mono" aria-hidden="true">Request similar project →</span>
+            </a>
+            <figcaption class="project-caption mono">Modern villa — New build, Sheikh Zayed</figcaption>
+          </figure>
+
+          <figure class="project-card reveal">
+            <a class="project-media" href="#contact" aria-label="Request a similar project: kitchen fit-out in Maadi">
+              <img class="ratio-43" src="assets/x-kitchen.jpg" alt="Fitted kitchen with matte cabinets, marble worktop and warm under-cabinet lighting in Maadi" width="1200" height="900" loading="lazy">
+              <span class="project-chip mono" aria-hidden="true">Request similar project →</span>
+            </a>
+            <figcaption class="project-caption mono">Kitchen fit-out, Maadi</figcaption>
+          </figure>
+
+          <figure class="project-card reveal">
+            <a class="project-media" href="#contact" aria-label="Request a similar project: office fit-out in New Cairo">
+              <img class="ratio-11" src="assets/x-office.jpg" alt="Open-plan office fit-out with glass partitions, wood flooring and meeting booths in New Cairo" width="1200" height="1200" loading="lazy">
+              <span class="project-chip mono" aria-hidden="true">Request similar project →</span>
+            </a>
+            <figcaption class="project-caption mono">Office fit-out, New Cairo</figcaption>
+          </figure>
+
+          <figure class="project-card reveal">
+            <a class="project-media" href="#contact" aria-label="Request a similar project: garden and landscape works in 6th October City">
+              <img class="ratio-43" src="assets/x-garden.jpg" alt="Landscaped family garden with stone pathways, planting beds and a timber pergola in 6th October City" width="1200" height="900" loading="lazy">
+              <span class="project-chip mono" aria-hidden="true">Request similar project →</span>
+            </a>
+            <figcaption class="project-caption mono">Garden &amp; landscape, 6th October</figcaption>
+          </figure>
+
+          <figure class="project-card reveal">
+            <a class="project-media" href="#contact" aria-label="Request a similar project: community mosque façade restoration">
+              <img class="ratio-45" src="assets/x-mosque.jpg" alt="Restored limestone façade of a community mosque with cleaned stonework and new pointed-arch windows" width="1200" height="1500" loading="lazy">
+              <span class="project-chip mono" aria-hidden="true">Request similar project →</span>
+            </a>
+            <figcaption class="project-caption mono">Community mosque — Façade restoration</figcaption>
+          </figure>
+
+          <figure class="project-card reveal">
+            <a class="project-media" href="#contact" aria-label="Request a similar project: full home renovation in Zamalek">
+              <img class="ratio-43" src="assets/x-interior.jpg" alt="Renovated Zamalek apartment living room with custom shelving, mouldings and warm floor lighting" width="1200" height="900" loading="lazy">
+              <span class="project-chip mono" aria-hidden="true">Request similar project →</span>
+            </a>
+            <figcaption class="project-caption mono">Full home renovation, Zamalek</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. PROCESS — 3 steps with connecting line + wide team card
+         ============================================================ -->
+    <section class="section process" id="process" aria-labelledby="processTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">03 — How we work</p>
+          <h2 id="processTitle">Process</h2>
+          <p class="section-sub">Three steps. You always know what is happening on site and what it costs.</p>
+        </div>
+
+        <ol class="process-steps">
+          <li class="process-step reveal">
+            <p class="step-num mono" aria-hidden="true">1</p>
+            <h3>Site visit &amp; honest quote</h3>
+            <p>We measure, listen, then price the job in writing. Fixed price, no surprises — the quote is the contract.</p>
+          </li>
+          <li class="process-step reveal">
+            <p class="step-num mono" aria-hidden="true">2</p>
+            <h3>Build with weekly photo updates</h3>
+            <p>One crew, one supervisor. You get dated photo progress every week — whether you visit the site or not.</p>
+          </li>
+          <li class="process-step reveal">
+            <p class="step-num mono" aria-hidden="true">3</p>
+            <h3>Handover &amp; 12-month warranty</h3>
+            <p>We close the snag list together at handover, then back the work with a 12-month workmanship warranty.</p>
+          </li>
+        </ol>
+
+        <figure class="team-card reveal">
+          <img src="assets/x-team.jpg" alt="Bunyan site engineers in hard hats and hi-vis vests reviewing drawings together on a construction site" width="1600" height="700" loading="lazy">
+          <figcaption class="team-caption mono">Our engineers on site — every week, no exceptions.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. CONTACT — details panel + demo lead form
+         ============================================================ -->
+    <section class="section contact" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">04 — Contact</p>
+          <h2 id="contactTitle">Get a quote</h2>
+          <p class="section-sub">Tell us what you are building. We call back within one working day — usually much sooner.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- LEFT: contact details -->
+          <aside class="panel contact-panel reveal" aria-label="Bunyan Contracting contact details">
+            <h3 class="contact-heading">Talk to the team</h3>
+            <dl class="contact-rows">
+              <div class="contact-row">
+                <dt class="contact-label mono">Phone</dt>
+                <dd class="contact-value"><a href="tel:+201000000000">+20 100 000 0000</a></dd>
+              </div>
+              <div class="contact-row">
+                <dt class="contact-label mono">Email</dt>
+                <dd class="contact-value"><a href="mailto:tenders@bunyan.example">tenders@bunyan.example</a></dd>
+              </div>
+              <div class="contact-row">
+                <dt class="contact-label mono">Area</dt>
+                <dd class="contact-value">Greater Cairo — Nasr City · Maadi · New Cairo · Sheikh Zayed · 6th October</dd>
+              </div>
+            </dl>
+            <p class="contact-note">Site visits within 48 hours. Every quote is fixed in writing and valid for 30 days.</p>
+          </aside>
+
+          <!-- RIGHT: lead form (demo only — sends nothing) -->
+          <div class="panel form-panel reveal">
+            <form id="leadForm" novalidate aria-label="Project request form">
+
+              <div class="form-row">
+                <div class="field">
+                  <label class="field-label mono" for="leadName">Name *</label>
+                  <input class="field-input" id="leadName" name="name" type="text" autocomplete="name" placeholder="e.g. Ahmed Hassan" aria-describedby="leadNameError" aria-required="true">
+                  <p class="field-error" id="leadNameError" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field-label mono" for="leadPhone">Phone *</label>
+                  <input class="field-input" id="leadPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +20 100 123 4567" aria-describedby="leadPhoneError" aria-required="true">
+                  <p class="field-error" id="leadPhoneError" role="alert" hidden></p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label class="field-label mono" for="leadType">Project type *</label>
+                  <select class="field-input" id="leadType" name="type" aria-describedby="leadTypeError" aria-required="true">
+                    <option value="">Select project type…</option>
+                    <option value="New Build">New Build</option>
+                    <option value="Renovation">Renovation</option>
+                    <option value="Kitchen or Bathroom">Kitchen or Bathroom</option>
+                    <option value="Office Fit-Out">Office Fit-Out</option>
+                    <option value="Maintenance">Maintenance</option>
+                  </select>
+                  <p class="field-error" id="leadTypeError" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field-label mono" for="leadBudget">Budget *</label>
+                  <select class="field-input" id="leadBudget" name="budget" aria-describedby="leadBudgetError" aria-required="true">
+                    <option value="">Select budget range…</option>
+                    <option value="Under 100,000 EGP">Under 100,000 EGP</option>
+                    <option value="100,000–300,000 EGP">100,000–300,000 EGP</option>
+                    <option value="300,000–1,000,000 EGP">300,000–1,000,000 EGP</option>
+                    <option value="Over 1,000,000 EGP">Over 1,000,000 EGP</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                  <p class="field-error" id="leadBudgetError" role="alert" hidden></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label mono" for="leadMessage">Message <span class="label-optional">(optional)</span></label>
+                <textarea class="field-input" id="leadMessage" name="message" rows="5" placeholder="Rooms, size, location, timeline — whatever you know so far."></textarea>
+              </div>
+
+              <button class="btn btn-amber btn-block" type="submit">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v2.2a1.9 1.9 0 0 1-2.1 1.9 19.4 19.4 0 0 1-8.5-3 19.1 19.1 0 0 1-5.9-5.9 19.4 19.4 0 0 1-3-8.5A1.9 1.9 0 0 1 4.4 1.5h2.2a1.9 1.9 0 0 1 1.9 1.6c.12.9.34 1.79.65 2.64a1.9 1.9 0 0 1-.43 2L7.8 8.7a15.3 15.3 0 0 0 5.9 5.9l.96-.92a1.9 1.9 0 0 1 2-.43c.85.31 1.74.53 2.64.65a1.9 1.9 0 0 1 1.6 2z"/></svg>
+                Request a callback via WhatsApp
+              </button>
+              <p class="form-hint mono">Demo form — nothing is sent from this page.</p>
+            </form>
+
+            <!-- Success panel: shown after a valid (demo) submit -->
+            <div class="success-panel" id="formSuccess" hidden tabindex="-1" aria-labelledby="successKicker">
+              <div class="success-head">
+                <svg class="success-check" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                  <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                  <path d="M15 24.5 21.5 31 33 18.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="success-kicker mono" id="successKicker">Request logged — demo mode</p>
+              </div>
+              <p class="success-lede">Here is the message your request would send:</p>
+              <pre class="lead-preview" id="leadPreview"></pre>
+              <p class="success-note">This template doesn't send real messages — on your live site this opens WhatsApp pre-filled. <a href="../../index.html">Get yours at El-Peak →</a></p>
+              <button class="btn btn-amber" id="resetFormBtn" type="button">Submit another request</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       8. FOOTER — hazard strip above, near-black, mono small text
+       ============================================================ -->
+  <div class="hazard" aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-line">© <span id="footerYear">2026</span> Bunyan Contracting · Template by <a class="footer-brand-link" href="../../index.html">El-Peak</a></p>
+      <nav class="footer-nav mono" aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Toast: polite live region for demo feedback -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Al-Noor Kitchen — Levantine grill house &amp; mezze bar. Browse the menu, build your order and place it in seconds. Live demo template by El-Peak.">
+  <meta name="theme-color" content="#2C1D12">
+  <title>Al-Noor Kitchen — Levantine grill house &amp; mezze bar · Live Demo</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23C4502B'/%3E%3Ctext%20x='32'%20y='44'%20font-family='Georgia,serif'%20font-size='34'%20font-weight='700'%20text-anchor='middle'%20fill='%23FAF3E7'%3EA%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="css/menu-style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to menu</a>
+
+  <!-- ============================================================
+       1. Demo banner strip (dark espresso, sticky — the category
+          bar docks underneath it)
+       ============================================================ -->
+  <div class="demo-banner" id="demoBanner">
+    <p class="demo-banner__note">
+      <span aria-hidden="true">✦</span>
+      Live demo template by <a href="../../index.html">El-Peak</a> — buttons on this page do <strong>NOT</strong> send real WhatsApp messages
+    </p>
+    <a class="demo-banner__back" href="../../index.html">← Back to El-Peak</a>
+  </div>
+
+  <!-- ============================================================
+       2. Full-bleed hero — r-hero.png + espresso gradient overlay
+       ============================================================ -->
+  <header class="hero" id="top">
+    <img class="hero__img"
+         src="assets/r-hero.jpg"
+         alt="Warm Levantine grill house scene — charcoal grill, mezze plates and fresh flatbread on a shared table"
+         width="1600" height="1000"
+         loading="eager" fetchpriority="high">
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Levantine Kitchen · Est. 2012</p>
+      <h1 class="hero__brand"><em>Al-Noor</em> Kitchen</h1>
+      <p class="hero__tagline">Charcoal-grilled classics and hand-made mezze, served generously.</p>
+
+      <ul class="hero__chips" aria-label="Restaurant information">
+        <li class="hero__chip">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M12 20s-7-4.4-9-8.6C1.6 8.2 3.4 5 6.6 5c2 0 3.6 1.1 5.4 3.2C13.8 6.1 15.4 5 17.4 5c3.2 0 5 3.2 3.6 6.4C19 15.6 12 20 12 20z"/>
+          </svg>
+          Family friendly · Halal
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       3. Sticky category bar (docks below the demo banner)
+       ============================================================ -->
+  <nav class="cat-bar" id="catBar" aria-label="Menu categories">
+    <div class="cat-bar__inner">
+      <a class="chip is-active" href="#appetizers" data-target="appetizers" aria-current="true">Appetizers</a>
+      <a class="chip" href="#mains" data-target="mains">Main Courses</a>
+      <a class="chip" href="#desserts" data-target="desserts">Desserts</a>
+      <a class="chip" href="#beverages" data-target="beverages">Beverages</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         4. Menu sections — items are rendered by js/menu-cart.js
+            from the ✏️ MENU array (see menu-cart.js)
+         ============================================================ -->
+    <section class="menu-section" id="appetizers" aria-labelledby="appetizers-title">
+      <div class="section-head">
+        <h2 class="section-title" id="appetizers-title">Appetizers</h2>
+        <p class="section-sub">Mezze made for sharing</p>
+        <span class="saffron-rule" aria-hidden="true"></span>
+      </div>
+      <div class="menu-list" data-menu-list="appetizers"></div>
+    </section>
+
+    <section class="menu-section" id="mains" aria-labelledby="mains-title">
+      <div class="section-head">
+        <h2 class="section-title" id="mains-title">Main Courses</h2>
+        <p class="section-sub">From the charcoal grill</p>
+        <span class="saffron-rule" aria-hidden="true"></span>
+      </div>
+      <div class="menu-list" data-menu-list="mains"></div>
+    </section>
+
+    <section class="menu-section" id="desserts" aria-labelledby="desserts-title">
+      <div class="section-head">
+        <h2 class="section-title" id="desserts-title">Desserts</h2>
+        <p class="section-sub">Sweet finishes, made in-house</p>
+        <span class="saffron-rule" aria-hidden="true"></span>
+      </div>
+      <div class="menu-list" data-menu-list="desserts"></div>
+    </section>
+
+    <section class="menu-section" id="beverages" aria-labelledby="beverages-title">
+      <div class="section-head">
+        <h2 class="section-title" id="beverages-title">Beverages</h2>
+        <p class="section-sub">Sips &amp; steeps</p>
+        <span class="saffron-rule" aria-hidden="true"></span>
+      </div>
+      <div class="menu-list" data-menu-list="beverages"></div>
+    </section>
+
+    <noscript>
+      <p class="noscript-note">Our full menu needs JavaScript. Please enable it to browse dishes and place an order.</p>
+    </noscript>
+
+    <!-- ============================================================
+         5. Chef's Specials strip (deep olive panel)
+         ============================================================ -->
+    <section class="specials" aria-labelledby="specials-title">
+      <div class="specials__inner">
+        <p class="specials__eyebrow">Tonight at Al-Noor</p>
+        <h2 class="specials__title" id="specials-title">Chef&rsquo;s <em>Specials</em></h2>
+        <p class="specials__copy">Each evening our chef selects the freshest items from the market — ask us what's on tonight.</p>
+        <button class="specials__chip" id="specialsChip" type="button">
+          Ask about tonight&rsquo;s special
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5 12h13"/><path d="M13 6l6 6-6 6"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       8. Footer (espresso, sticky-footer pattern via CSS)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col site-footer__col--brand">
+        <p class="site-footer__brand"><em>Al-Noor</em> Kitchen</p>
+        <p class="site-footer__text">Family-owned Levantine grill house &amp; mezze bar. Fully halal kitchen and recipes handed down three generations.</p>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__heading">Order</h2>
+        <p class="site-footer__text">Order ahead by phone or WhatsApp — counter pickup or delivery across the city.</p>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__heading">Find us</h2>
+        <address class="site-footer__text">
+          12 Corniche El Nil, Downtown<br>
+          <a class="site-footer__link" href="tel:+201000000000">+20 100 000 0000</a>
+        </address>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span id="year">2025</span> Al-Noor Kitchen · Template by <a href="../../index.html">El-Peak</a></p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       7. Floating cart pill (opens the drawer)
+       ============================================================ -->
+  <button class="cart-fab" id="cartFab" type="button" aria-haspopup="dialog" aria-controls="cartDrawer" aria-label="Open your order — 0 items, EGP 0">
+    <svg class="cart-fab__bag" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M6.4 8.6h11.2l-.9 10.1a1.9 1.9 0 0 1-1.9 1.7H9.2a1.9 1.9 0 0 1-1.9-1.7L6.4 8.6z"/>
+      <path d="M9.1 8.6V7.2a2.9 2.9 0 0 1 5.8 0v1.4"/>
+    </svg>
+    <span class="cart-fab__count" id="fabCount">0</span>
+    <span class="cart-fab__subtotal" id="fabSubtotal">EGP 0</span>
+  </button>
+
+  <!-- ============================================================
+       6. Cart drawer (right slide-in / bottom sheet) + overlay
+       ============================================================ -->
+  <div class="overlay" id="cartOverlay" aria-hidden="true"></div>
+
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" tabindex="-1">
+
+    <!-- View A: cart & details -->
+    <div class="drawer__view" id="cartView">
+      <header class="drawer__head">
+        <div>
+          <h2 class="drawer__title" id="cartTitle">Your order</h2>
+          <p class="drawer__meta" id="cartCountLabel">0 items</p>
+        </div>
+        <button class="drawer__close" id="drawerClose" type="button" aria-label="Close your order">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </header>
+
+      <div class="drawer__body">
+        <ul class="cart-lines" id="cartLines"></ul>
+
+        <div class="subtotal-row">
+          <span class="subtotal-row__label">Subtotal</span>
+          <strong class="subtotal-row__amt" id="subtotalAmt">EGP 0</strong>
+        </div>
+
+        <hr class="drawer__divider">
+
+        <h3 class="drawer__subhead">Your details</h3>
+        <p class="drawer__note">Optional — we&rsquo;d only use them to confirm your order.</p>
+
+        <div class="field">
+          <label class="field__label" for="custName">Name</label>
+          <input class="field__input" id="custName" name="custName" type="text" autocomplete="name" placeholder="e.g. Layla Hassan">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="custPhone">Phone</label>
+          <input class="field__input" id="custPhone" name="custPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +20 100 123 4567" aria-describedby="phoneErr">
+          <p class="field-err" id="phoneErr" hidden>Please enter at least 7 digits — or leave the field blank.</p>
+        </div>
+
+        <p class="drawer-hint" id="placeHint" hidden>Your order is empty — add a dish or two first.</p>
+      </div>
+
+      <footer class="drawer__foot">
+        <button class="btn btn-primary btn-lg" id="placeOrderBtn" type="button">
+          <svg class="wa-glyph" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M12 3.7a8.3 8.3 0 0 0-7.1 12.6L4 20.3l4.1-1a8.3 8.3 0 1 0 3.9-15.6z"/>
+            <path d="M9.4 8.5c.5 2.7 2.6 4.8 5.3 5.3l.9-1.5 2 .9c-.4 1.5-1.7 2.3-3.2 2-3.2-.6-5.8-3.2-6.4-6.4-.3-1.5.5-2.8 2-3.2l.9 2-1.5.9z"/>
+          </svg>
+          Place Order via WhatsApp
+        </button>
+        <button class="btn btn-ghost" id="clearCartBtn" type="button">Clear cart</button>
+      </footer>
+    </div>
+
+    <!-- View B: in-drawer confirmation (demo preview, no real messages) -->
+    <div class="drawer__view drawer__view--confirm" id="confirmView" hidden>
+      <header class="drawer__head">
+        <h2 class="drawer__title">Order preview</h2>
+        <button class="drawer__close" id="confirmClose" type="button" aria-label="Close order preview">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </header>
+
+      <div class="drawer__body confirm__body">
+        <p class="confirm__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+            <path d="M4 12.5l5.2 5L20 6.8"/>
+          </svg>
+        </p>
+        <h3 class="confirm__title" id="confirmTitle">Shukran!</h3>
+        <p class="confirm__sub">Here&rsquo;s the message your order would send:</p>
+        <pre class="confirm__msg" id="orderMsg" tabindex="0"></pre>
+        <p class="confirm__demo-note">
+          <strong>Demo preview</strong> — This template doesn&rsquo;t send real messages — on your live site, this order opens WhatsApp pre-filled. Get yours at
+          <a href="../../index.html">El-Peak →</a>
+        </p>
+      </div>
+
+      <footer class="drawer__foot drawer__foot--column">
+        <button class="btn btn-primary btn-lg" id="newOrderBtn" type="button">Start a new order</button>
+        <button class="btn btn-ghost" id="backToMenuBtn" type="button">Back to menu</button>
+      </footer>
+    </div>
+
+  </aside>
+
+  <!-- Screen-reader live region for cart updates -->
+  <p class="sr-only" id="cartStatus" role="status" aria-live="polite"></p>
+
+  <!-- Micro-feedback toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/menu-cart.js"></script>
+</body>
+</html>

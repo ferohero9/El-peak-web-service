@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       Noor Dental Clinic — demo template (El-Peak portfolio)
+       Airy teal medical design · light theme only · no frameworks,
+       no CDNs, no external fonts. Static + cPanel-ready.
+       This page is a DEMO: nothing here sends real WhatsApp messages.
+       ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noor Dental Clinic — Gentle, Honest Dental Care · Demo by El-Peak</title>
+  <meta name="description" content="Family dental clinic demo template: gentle care and transparent EGP pricing. Book an appointment request in under a minute. Live demo by El-Peak.">
+  <meta name="theme-color" content="#0E9F8A">
+  <meta name="color-scheme" content="light">
+
+  <!-- Inline SVG favicon (teal tooth, no external file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230E9F8A'/%3E%3Cpath d='M23 14c-6.5 0-9.6 5.3-8.5 12.6 1 8.4 4 21.4 8.2 23.4 3.2 1.4 3.2-6.3 5.3-11.5 1-3 5.1-3 6.1 0 2.1 5.2 2.1 12.9 5.3 11.5 4.2-2 7.2-15 8.2-23.4C48.7 19.3 45.6 14 39 14c-3.2 0-4.3 2.1-8 2.1S26.2 14 23 14z' fill='%23ffffff'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="css/clinic-style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+       1. DEMO BANNER STRIP (deep teal bar)
+       ============================================================ -->
+  <header class="demo-bar">
+    <div class="wrap demo-bar__inner">
+      <p class="demo-bar__msg">
+        <span class="demo-bar__spark" aria-hidden="true">✦</span>
+        Live demo template by <strong>El-Peak</strong> — buttons on this page do
+        <strong>NOT</strong> send real WhatsApp messages
+      </p>
+      <a class="demo-bar__back" href="../../index.html">← Back to El-Peak</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         2. HERO — rounded mint-gradient band
+         ============================================================ -->
+    <section class="hero-zone" aria-labelledby="heroTitle">
+      <div class="wrap">
+        <div class="hero">
+          <div class="hero__copy">
+            <p class="pill pill--coral">Now accepting new patients</p>
+            <h1 id="heroTitle">Gentle care for every&nbsp;smile</h1>
+            <p class="hero__sub">
+              From first check-ups to full smile restoration — every price is listed
+              upfront in EGP, with no surprises.
+            </p>
+            <div class="hero__cta">
+              <a class="btn btn--solid" href="#booking">Book an appointment</a>
+              <a class="btn btn--ghost" href="#services">See services</a>
+            </div>
+            <ul class="trust-chips" aria-label="Why families trust Noor Dental Clinic">
+              <li class="chip">4.9 <span class="chip__star" aria-hidden="true">★</span><span class="sr-only">star</span> patient rating</li>
+              <li class="chip">Sterilization certified</li>
+              <li class="chip">Kids welcome</li>
+            </ul>
+          </div>
+
+          <div class="hero__media">
+            <figure class="hero__photo">
+              <img
+                src="assets/c-hero.jpg"
+                alt="Bright modern treatment room at Noor Dental Clinic with a clean white dental chair and mint-green wall"
+                width="960" height="1080"
+                loading="eager" fetchpriority="high" decoding="async">
+            </figure>
+            <p class="hero__float">
+              <span class="hero__float-dot" aria-hidden="true"></span>
+              <span class="hero__float-text">
+                <strong>Next slot available</strong>
+                Tomorrow 10:30
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. SERVICES — rendered by JS from SERVICES (see clinic-booking.js)
+         ============================================================ -->
+    <section id="services" class="section" aria-labelledby="servicesTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="pill pill--mint">Our services</p>
+          <h2 id="servicesTitle">Honest care, transparent prices</h2>
+          <p class="section-sub">Six everyday treatments, every price in EGP, nothing hidden in the chair.</p>
+        </div>
+        <noscript>
+          <p class="noscript-note">
+            Our interactive service list and booking form need JavaScript.
+            Please enable it, or call <a href="tel:+201000000000">+20&nbsp;100&nbsp;000&nbsp;0000</a> to book your visit.
+          </p>
+        </noscript>
+        <div class="svc-grid" id="svcGrid">
+          <!-- Service cards are rendered here by js/clinic-booking.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. MEET THE DENTISTS
+         ============================================================ -->
+    <section id="dentists" class="section section--mint" aria-labelledby="dentistsTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="pill pill--mint">Our team</p>
+          <h2 id="dentistsTitle">Meet the dentists</h2>
+          <p class="section-sub">The same dentists at every visit.</p>
+        </div>
+
+        <div class="doc-grid">
+          <article class="doc-card">
+            <figure class="doc-card__photo">
+              <img
+                src="assets/c-doctor-t.jpg"
+                alt="Portrait of Dr. Tarek Selim smiling warmly in a white dental coat"
+                width="640" height="800" loading="lazy" decoding="async">
+            </figure>
+            <h3 class="doc-card__name">Dr. Tarek Selim</h3>
+            <p class="doc-card__role">Orthodontist · DDS</p>
+            <blockquote class="doc-card__quote">“Braces should feel like a journey, not a chore — we make it fun.”</blockquote>
+          </article>
+
+          <article class="doc-card">
+            <figure class="doc-card__photo">
+              <img
+                src="assets/c-doctor-m.jpg"
+                alt="Portrait of Dr. Karim Fouad smiling in a light blue clinic uniform"
+                width="640" height="800" loading="lazy" decoding="async">
+            </figure>
+            <h3 class="doc-card__name">Dr. Karim Fouad</h3>
+            <p class="doc-card__role">General &amp; Cosmetic Dentistry</p>
+            <blockquote class="doc-card__quote">“We explain everything first, then treat — no surprises, ever.”</blockquote>
+          </article>
+        </div>
+
+        <figure class="clinic-banner">
+          <img
+            src="assets/c-reception.jpg"
+            alt="The bright, calm reception area of Noor Dental Clinic with soft mint seating and warm lighting"
+            width="1600" height="640" loading="lazy" decoding="async">
+          <figcaption>A calm space for nervous patients</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. BOOKING — numbered steps, inline validation, demo success panel
+         ============================================================ -->
+    <section id="booking" class="section" aria-labelledby="bookingTitle">
+      <div class="wrap">
+        <div class="book-card">
+          <div class="book-card__head">
+            <p class="pill pill--mint">Booking</p>
+            <h2 id="bookingTitle">Request an appointment</h2>
+            <p class="section-sub">Tell us what you need — we confirm every request by phone.</p>
+          </div>
+
+          <form id="bookingForm" class="book-form" novalidate>
+
+            <fieldset class="step">
+              <legend class="step__legend"><span class="step__num" aria-hidden="true">1</span>Your details</legend>
+              <div class="field">
+                <label class="field__label" for="bkName">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__input" type="text" id="bkName" name="name"
+                       autocomplete="name" placeholder="e.g. Ahmed Hassan" required>
+                <p class="field__error" id="bkNameErr" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="bkPhone">Phone number <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__input" type="tel" id="bkPhone" name="phone"
+                       inputmode="tel" autocomplete="tel" placeholder="e.g. +20 100 123 4567" required>
+                <p class="field__hint">At least 7 digits — we only use it to confirm your visit.</p>
+                <p class="field__error" id="bkPhoneErr" role="alert" hidden></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend class="step__legend"><span class="step__num" aria-hidden="true">2</span>Choose care</legend>
+              <div class="field">
+                <label class="field__label" for="bkService">Service <span class="req" aria-hidden="true">*</span></label>
+                <select class="field__input field__select" id="bkService" name="service" required>
+                  <option value="">Choose the care you need…</option>
+                  <!-- Options are populated from SERVICES by js/clinic-booking.js -->
+                </select>
+                <p class="field__error" id="bkServiceErr" role="alert" hidden></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend class="step__legend"><span class="step__num" aria-hidden="true">3</span>Pick a time</legend>
+              <div class="field">
+                <label class="field__label" for="bkDate">Preferred date <span class="req" aria-hidden="true">*</span></label>
+                <input class="field__input field__date" type="date" id="bkDate" name="date" required>
+                <p class="field__hint">We&rsquo;ll confirm availability by phone.</p>
+                <p class="field__error" id="bkDateErr" role="alert" hidden></p>
+              </div>
+              <div class="field">
+                <span class="field__label" id="slotGroupLabel">Time of day <span class="req" aria-hidden="true">*</span></span>
+                <div class="slot-group" role="radiogroup" aria-labelledby="slotGroupLabel">
+                  <label class="slot-pill">
+                    <input class="sr-only" type="radio" name="slot" value="morning">
+                    <span class="slot-pill__face">Morning</span>
+                  </label>
+                  <label class="slot-pill">
+                    <input class="sr-only" type="radio" name="slot" value="afternoon">
+                    <span class="slot-pill__face">Afternoon</span>
+                  </label>
+                  <label class="slot-pill">
+                    <input class="sr-only" type="radio" name="slot" value="evening">
+                    <span class="slot-pill__face">Evening</span>
+                  </label>
+                </div>
+                <p class="field__error" id="bkSlotErr" role="alert" hidden></p>
+              </div>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend class="step__legend"><span class="step__num" aria-hidden="true">4</span>Notes <span class="step__opt">(optional)</span></legend>
+              <div class="field">
+                <label class="field__label" for="bkNotes">Anything we should know?</label>
+                <textarea class="field__input field__textarea" id="bkNotes" name="notes" rows="3"
+                          placeholder="e.g. I'm a nervous patient — please go slow."></textarea>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn--solid btn--lg book-form__submit">
+              Request appointment via WhatsApp
+            </button>
+          </form>
+
+          <!-- Success panel (shown after a valid demo submit) -->
+          <div class="success" id="bkSuccess" hidden>
+            <div class="success__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M4.5 12.8l4.6 4.6L19.5 6.9"/>
+              </svg>
+            </div>
+            <h3 class="success__title" id="bkSuccessTitle" tabindex="-1">
+              Shukran, <span id="bkSuccessName">friend</span>! Your request is ready.
+            </h3>
+            <p class="success__sub">
+              Our team confirms every request by phone.
+              Here is what we received:
+            </p>
+
+            <dl class="sum-card" id="bkSummary">
+              <!-- Summary rows are filled in by js/clinic-booking.js -->
+            </dl>
+
+            <div class="msg-block">
+              <p class="msg-block__label">Message preview</p>
+              <pre class="msg-block__pre" id="bkMessage" tabindex="0"></pre>
+            </div>
+
+            <p class="demo-note">
+              <strong>Demo preview:</strong> this template doesn't send real messages — on your
+              live site this opens WhatsApp pre-filled. Get yours at
+              <a href="../../index.html">El-Peak →</a>
+            </p>
+
+            <button type="button" class="btn btn--coral" id="bkAgain">Make another booking</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. VISIT US STRIP
+         ============================================================ -->
+    <section id="visit" class="section section--tight" aria-labelledby="visitTitle">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="pill pill--mint">Visit us</p>
+          <h2 id="visitTitle">Easy to find, easy to park</h2>
+        </div>
+        <div class="visit-grid">
+          <article class="visit-card">
+            <span class="visit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                   stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/>
+              </svg>
+            </span>
+            <h3 class="visit-card__label">Address</h3>
+            <p class="visit-card__value">14 El Nasr St, Nasr City</p>
+            <!-- The one allowed external link: free map directions -->
+            <a class="visit-card__link" href="https://www.google.com/maps/search/?api=1&amp;query=dental+clinic+nasr+city"
+               target="_blank" rel="noopener">Get Directions
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M7 17L17 7M9 7h8v8"/>
+              </svg>
+            </a>
+          </article>
+
+
+          <article class="visit-card">
+            <span class="visit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                   stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M5 4h4l1.7 4.2-2.1 1.6a12.5 12.5 0 0 0 5.6 5.6l1.6-2.1L20 15v4a1.8 1.8 0 0 1-2 1.8C10.4 20 4 13.6 3.2 6A1.8 1.8 0 0 1 5 4z"/>
+              </svg>
+            </span>
+            <h3 class="visit-card__label">Phone</h3>
+            <p class="visit-card__value"><a class="visit-card__tel" href="tel:+201000000000">+20 100 000 0000</a></p>
+            <p class="visit-card__meta">Direct reception line.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       7. FOOTER (deep teal)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <p class="site-footer__name">Noor Dental Clinic</p>
+          <p class="site-footer__commit">Honest pricing, gentle care — for every family.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <a href="#services">Services</a>
+          <a href="#dentists">Dentists</a>
+          <a href="#booking">Book a visit</a>
+          <a href="#visit">Visit us</a>
+        </nav>
+      </div>
+      <p class="site-footer__line">
+        © <span id="fYear">2025</span> Noor Dental Clinic · Template by
+        <a href="../../index.html">El-Peak</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast (aria-live polite) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/clinic-booking.js"></script>
+</body>
+</html>
