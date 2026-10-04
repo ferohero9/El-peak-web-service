@@ -302,6 +302,203 @@
   }
 
   /* ----------------------------------------------------------
+     8b. CUSTOM GLASSMORPHIc SELECT
+     ---------------------------------------------------------- */
+  function initCustomSelect() {
+    var wraps = $$('.custom-select-wrap');
+    if (!wraps.length) return;
+
+    wraps.forEach(function (wrap) {
+      var nativeSelect = $('.custom-select-native', wrap);
+      var trigger = $('.custom-select-trigger', wrap);
+      var dropdown = $('.custom-select-dropdown', wrap);
+      var valueEl = $('.custom-select-value', wrap);
+      var options = $$('.custom-select-option', dropdown);
+      var field = wrap.closest('.field');
+
+      if (!nativeSelect || !trigger || !dropdown) return;
+
+      var highlightedIndex = -1;
+
+      function open() {
+        dropdown.hidden = false;
+        requestAnimationFrame(function () {
+          dropdown.classList.add('is-open');
+          trigger.classList.add('is-active');
+          trigger.setAttribute('aria-expanded', 'true');
+          if (field) field.style.zIndex = '40';
+        });
+
+        highlightedIndex = -1;
+        options.forEach(function (opt, idx) {
+          if (opt.classList.contains('is-selected')) {
+            highlightedIndex = idx;
+          }
+        });
+        if (highlightedIndex < 0) highlightedIndex = 0;
+        highlight(highlightedIndex);
+      }
+
+      function close() {
+        dropdown.classList.remove('is-open');
+        trigger.classList.remove('is-active');
+        trigger.setAttribute('aria-expanded', 'false');
+        if (field) field.style.zIndex = '';
+        setTimeout(function () {
+          if (!dropdown.classList.contains('is-open')) {
+            dropdown.hidden = true;
+          }
+        }, 200);
+        clearHighlight();
+      }
+
+      function toggle() {
+        if (dropdown.classList.contains('is-open')) {
+          close();
+        } else {
+          $$('.custom-select-dropdown.is-open').forEach(function (d) {
+            d.classList.remove('is-open');
+            setTimeout(function () {
+              if (!d.classList.contains('is-open')) d.hidden = true;
+            }, 200);
+            var t = d.parentElement && d.parentElement.querySelector('.custom-select-trigger');
+            if (t) {
+              t.classList.remove('is-active');
+              t.setAttribute('aria-expanded', 'false');
+            }
+          });
+          open();
+        }
+      }
+
+      function selectOption(opt) {
+        if (!opt) return;
+        var val = opt.getAttribute('data-value');
+        nativeSelect.value = val;
+        valueEl.textContent = val;
+
+        options.forEach(function (o) {
+          var isSel = o === opt;
+          o.classList.toggle('is-selected', isSel);
+          o.setAttribute('aria-selected', String(isSel));
+          o.setAttribute('tabindex', isSel ? '0' : '-1');
+        });
+
+        var evt;
+        try {
+          evt = new Event('change', { bubbles: true });
+        } catch (err) {
+          evt = document.createEvent('Event');
+          evt.initEvent('change', true, false);
+        }
+        nativeSelect.dispatchEvent(evt);
+
+        close();
+        trigger.focus();
+      }
+
+      function highlight(index) {
+        options.forEach(function (opt, i) {
+          var isHl = i === index;
+          opt.classList.toggle('is-highlighted', isHl);
+          if (isHl) {
+            opt.scrollIntoView({ block: 'nearest' });
+          }
+        });
+        highlightedIndex = index;
+      }
+
+      function clearHighlight() {
+        options.forEach(function (opt) {
+          opt.classList.remove('is-highlighted');
+        });
+        highlightedIndex = -1;
+      }
+
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggle();
+      });
+
+      options.forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          selectOption(opt);
+        });
+      });
+
+      trigger.addEventListener('keydown', function (e) {
+        var isOpen = dropdown.classList.contains('is-open');
+
+        if (e.key === 'ArrowDown' || e.key === 'Down') {
+          e.preventDefault();
+          if (!isOpen) {
+            open();
+          } else {
+            var next = highlightedIndex + 1;
+            if (next >= options.length) next = 0;
+            highlight(next);
+          }
+        } else if (e.key === 'ArrowUp' || e.key === 'Up') {
+          e.preventDefault();
+          if (!isOpen) {
+            open();
+          } else {
+            var prev = highlightedIndex - 1;
+            if (prev < 0) prev = options.length - 1;
+            highlight(prev);
+          }
+        } else if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (isOpen && highlightedIndex >= 0 && highlightedIndex < options.length) {
+            selectOption(options[highlightedIndex]);
+          } else {
+            toggle();
+          }
+        } else if (e.key === 'Escape') {
+          if (isOpen) {
+            e.preventDefault();
+            close();
+          }
+        } else if (e.key === 'Tab') {
+          if (isOpen) {
+            close();
+          }
+        }
+      });
+
+      var form = wrap.closest('form');
+      if (form) {
+        form.addEventListener('reset', function () {
+          setTimeout(function () {
+            var defaultOpt = options[0];
+            if (defaultOpt) {
+              selectOption(defaultOpt);
+            }
+          }, 0);
+        });
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.custom-select-wrap')) {
+        $$('.custom-select-dropdown.is-open').forEach(function (d) {
+          d.classList.remove('is-open');
+          setTimeout(function () {
+            if (!d.classList.contains('is-open')) d.hidden = true;
+          }, 200);
+          var t = d.parentElement && d.parentElement.querySelector('.custom-select-trigger');
+          if (t) {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-expanded', 'false');
+          }
+          var f = d.closest('.field');
+          if (f) f.style.zIndex = '';
+        });
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------
      9. FOOTER YEAR
      ---------------------------------------------------------- */
   function initYear() {
@@ -321,6 +518,7 @@
     initReveal();
     initWhatsAppLinks();
     initContactForm();
+    initCustomSelect();
     initYear();
   }
 
