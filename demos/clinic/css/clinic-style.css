@@ -580,6 +580,10 @@ h1, h2, h3 {
   padding-right: 2.75rem;
   cursor: pointer;
 }
+.field__select option {
+  background-color: #ffffff;
+  color: var(--ink);
+}
 
 .field__date { color-scheme: light; }
 
