@@ -734,6 +734,11 @@ a.contact-value:hover { color: var(--amber); text-decoration: underline; }
 
 textarea.field-input { min-height: 128px; resize: vertical; }
 
+select.field-input option {
+  background-color: #17181a;
+  color: #f0f0f2;
+}
+
 .field-input::placeholder { color: rgba(168, 166, 158, 0.66); }
 
 .field-input:hover { border-color: rgba(242, 241, 236, 0.36); }
