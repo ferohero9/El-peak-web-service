@@ -506,14 +506,44 @@
             <input id="cfName" name="name" type="text" autocomplete="name" required placeholder="e.g. Ahmed Hassan">
           </div>
           <div class="field">
-            <label for="cfType">Business type</label>
-            <select id="cfType" name="type">
-              <option value="Restaurant / Café / Bakery">Restaurant / Café / Bakery</option>
-              <option value="Clinic / Gym / Wellness">Clinic / Gym / Wellness</option>
-              <option value="Shop / E-commerce / Retail">Shop / E-commerce / Retail</option>
-              <option value="Services / Company / Logistics">Services / Company / Logistics</option>
-              <option value="Other">Other</option>
-            </select>
+            <label for="cfTypeTrigger" id="cfTypeLabel">Business type</label>
+            <div class="custom-select-wrap" id="cfTypeWrap">
+              <select id="cfType" name="type" class="custom-select-native" tabindex="-1" aria-hidden="true">
+                <option value="Restaurant / Café / Bakery" selected>Restaurant / Café / Bakery</option>
+                <option value="Clinic / Gym / Wellness">Clinic / Gym / Wellness</option>
+                <option value="Shop / E-commerce / Retail">Shop / E-commerce / Retail</option>
+                <option value="Services / Company / Logistics">Services / Company / Logistics</option>
+                <option value="Other">Other</option>
+              </select>
+              <button class="custom-select-trigger" type="button" id="cfTypeTrigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="cfTypeLabel cfTypeValue">
+                <span class="custom-select-value" id="cfTypeValue">Restaurant / Café / Bakery</span>
+                <svg class="custom-select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+              <div class="custom-select-dropdown" id="cfTypeDropdown" role="listbox" aria-labelledby="cfTypeLabel" hidden>
+                <div class="custom-select-option is-selected" role="option" aria-selected="true" data-value="Restaurant / Café / Bakery" tabindex="0">
+                  <span>Restaurant / Café / Bakery</span>
+                  <svg class="opt-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div class="custom-select-option" role="option" aria-selected="false" data-value="Clinic / Gym / Wellness" tabindex="-1">
+                  <span>Clinic / Gym / Wellness</span>
+                  <svg class="opt-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div class="custom-select-option" role="option" aria-selected="false" data-value="Shop / E-commerce / Retail" tabindex="-1">
+                  <span>Shop / E-commerce / Retail</span>
+                  <svg class="opt-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div class="custom-select-option" role="option" aria-selected="false" data-value="Services / Company / Logistics" tabindex="-1">
+                  <span>Services / Company / Logistics</span>
+                  <svg class="opt-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div class="custom-select-option" role="option" aria-selected="false" data-value="Other" tabindex="-1">
+                  <span>Other</span>
+                  <svg class="opt-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="field">
             <label for="cfMsg">What do you need? <span aria-hidden="true">*</span></label>
