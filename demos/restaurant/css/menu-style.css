@@ -1138,3 +1138,22 @@ button { font: inherit; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Portfolio polish: a little more depth without losing the warm editorial feel. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(250, 243, 231, .22);
+  border-radius: 18px;
+}
+.hero__content { z-index: 2; }
+.menu-item { box-shadow: 0 12px 28px rgba(44, 29, 18, .08); transition: transform .25s ease, box-shadow .25s ease; }
+.menu-item:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(44, 29, 18, .13); }
+img.menu-item__photo { transition: transform .45s ease; }
+.menu-item:hover img.menu-item__photo { transform: scale(1.05); }
+.specials { position: relative; overflow: hidden; }
+.specials::after { content: ""; position: absolute; width: 320px; height: 320px; right: -120px; top: -190px; border: 1px solid rgba(224, 151, 59, .32); border-radius: 50%; box-shadow: 0 0 0 26px rgba(224, 151, 59, .06), 0 0 0 52px rgba(224, 151, 59, .04); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .menu-item, img.menu-item__photo { transition: none; } .menu-item:hover { transform: none; } }
