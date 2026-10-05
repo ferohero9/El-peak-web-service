@@ -957,3 +957,10 @@ select.field-input option {
   .project-media:hover img,
   .project-media:focus-visible img { transform: none; }
 }
+
+/* Portfolio polish: structural lines and deeper panels suit the industrial system. */
+.hero-content { position: relative; }
+.hero-content::before { content: ""; display: block; width: 54px; height: 5px; margin-bottom: 22px; background: var(--amber); box-shadow: 14px 14px 0 rgba(245, 166, 35, .22); }
+.services-grid .service-card { box-shadow: 0 14px 30px rgba(0, 0, 0, .16); }
+.project-card { border: 1px solid rgba(245, 166, 35, .15); background: var(--panel); box-shadow: 0 14px 30px rgba(0, 0, 0, .15); }
+.team-card { box-shadow: 0 22px 44px rgba(0, 0, 0, .22); }
