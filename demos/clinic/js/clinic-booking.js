@@ -30,7 +30,7 @@
     {
       id: 'hygiene',
       name: 'Hygiene & Cleaning',
-      desc: 'A gentle scale, polish and fluoride finish that keeps gums happy and breath fresh.',
+      desc: 'Example service copy for a cleaning visit. Confirm the treatment details with your clinic before publishing.',
       priceLabel: 'from EGP 300',
       img: 'assets/c-cleaning.jpg',
       imgAlt: 'Dental hygiene instruments — scaler and polishing brush — arranged on a calm teal background',
@@ -39,8 +39,8 @@
     {
       id: 'braces',
       name: 'Braces & Orthodontics',
-      desc: 'Braces and clear aligners for teens and adults — start with a free, no-pressure consult.',
-      priceLabel: 'Free consultation',
+      desc: 'Example service copy for braces and aligners. Replace it with the clinic’s real consultation and treatment details.',
+      priceLabel: 'Ask for consultation details',
       img: 'assets/c-braces.jpg',
       imgAlt: 'Dental model showing metal orthodontic brackets fitted on teeth',
       icon: null
@@ -48,7 +48,7 @@
     {
       id: 'whitening',
       name: 'Teeth Whitening',
-      desc: 'Safe in-clinic whitening that lifts coffee and tea stains in a single visit.',
+      desc: 'Example service copy for whitening. Confirm suitability, process and results with a qualified clinician.',
       priceLabel: 'from EGP 900',
       img: 'assets/c-whitening.jpg',
       imgAlt: 'Teeth whitening kit with LED whitening tray and whitening strips',
@@ -57,7 +57,7 @@
     {
       id: 'kids',
       name: 'Kids Dentistry',
-      desc: 'Friendly check-ups, sealants and tiny gentle fillings designed for small smiles.',
+      desc: 'Example service copy for children’s appointments. Add the clinic’s actual approach and available services.',
       priceLabel: 'from EGP 250',
       img: 'assets/c-kids.jpg',
       imgAlt: "Colourful children's toothbrushes and a dental care set on a mint background",
@@ -66,7 +66,7 @@
     {
       id: 'fillings',
       name: 'Tooth-Coloured Fillings',
-      desc: 'Natural-shade composite fillings that blend right in — no metal, no fuss.',
+      desc: 'Example service copy for fillings. Add the materials and options the clinic actually offers.',
       priceLabel: 'from EGP 400',
       img: null,
       imgAlt: null,
@@ -75,8 +75,8 @@
     {
       id: 'emergency',
       name: 'Emergency Care',
-      desc: 'Toothache or chipped tooth? We keep same-day slots open every day we are open.',
-      priceLabel: 'Same-day slots',
+      desc: 'Example service copy for urgent care. Add your actual availability and emergency instructions.',
+      priceLabel: 'Ask about availability',
       img: null,
       imgAlt: null,
       icon: 'shield'
