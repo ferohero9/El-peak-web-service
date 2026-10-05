@@ -441,3 +441,13 @@ select option { background-color: #ffffff; color: #12150f; }
   .cart-pill { margin-left: auto; }
   .shop-header { position: sticky; }
 }
+
+/* Portfolio polish: retain the loud retail personality, with more visual hierarchy. */
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; width: 430px; height: 430px; right: -160px; top: -280px; border: 2px solid rgba(163, 230, 53, .35); border-radius: 50%; box-shadow: 0 0 0 30px rgba(163, 230, 53, .06), 0 0 0 60px rgba(163, 230, 53, .03); pointer-events: none; }
+.hero__grid, .trust { position: relative; }
+.product__media { overflow: hidden; background: linear-gradient(135deg, #f4f7ec, #e4ecd2); }
+.product__media img { transition: transform .28s ease; }
+.product:hover .product__media img { transform: scale(1.045); }
+.trust__card { box-shadow: 5px 5px 0 rgba(18, 21, 15, .12); }
+@media (prefers-reduced-motion: reduce) { .product__media img { transition: none; } .product:hover .product__media img { transform: none; } }
