@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
   <!-- ============================================================
        El-Peak — Main Agency Landing Page
@@ -9,13 +9,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El-Peak — Custom Websites for Local Businesses</title>
-  <meta name="description" content="El-Peak builds fast, ethical, affordable custom websites for halal-conscious local businesses in Egypt — designed with top-of-the-line AI, reviewed before sending to client. One-time build from 1,500 EGP, orders go straight to your WhatsApp, zero aggregator commissions, standard cPanel hosting.">
+  <meta name="description" content="El-Peak builds considered, affordable custom websites for ethical local businesses in Egypt. AI-assisted design is reviewed before delivery, with direct WhatsApp ordering and standard cPanel hosting.">
   <meta name="theme-color" content="#6c5ce7">
 
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="El-Peak — Custom Websites for Local Businesses">
-  <meta property="og:description" content="Fast, ethical, affordable websites for local businesses — AI-assisted builds, one-time EGP pricing, WhatsApp ordering, cPanel hosting.">
+  <meta property="og:description" content="Thoughtful, ethical websites for local businesses — AI-assisted builds, clear EGP pricing, WhatsApp ordering and cPanel hosting.">
   <meta property="og:image" content="demos/restaurant/assets/r-hero.jpg">
 
   <!-- Inline SVG favicon (El-Peak twin-peak "M" mark, blue→purple gradient, no external file needed) -->
@@ -41,7 +41,7 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "El-Peak",
-    "description": "Custom static websites for halal-conscious local businesses in Egypt — designed and coded with top-of-the-line AI, reviewed before sending to client. One-time build fee 1,500 EGP, direct-to-WhatsApp ordering, zero aggregator commissions, standard cPanel hosting.",
+    "description": "Custom static websites for ethical local businesses in Egypt — AI-assisted and reviewed before delivery, with direct-to-WhatsApp ordering and standard cPanel hosting.",
     "areaServed": "Egypt",
     "priceRange": "EGP 1,500 – 5,000"
   }
@@ -71,18 +71,22 @@
 
       <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
         <ul class="nav-list">
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#demos">Demos</a></li>
-          <li><a class="nav-link" href="#hosting">Hosting</a></li>
-          <li><a class="nav-link" href="#pricing">Pricing</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="nav-link" href="#services" data-i18n="navServices">Services</a></li>
+          <li><a class="nav-link" href="#demos" data-i18n="navDemos">Demos</a></li>
+          <li><a class="nav-link" href="#hosting" data-i18n="navHosting">Hosting</a></li>
+          <li><a class="nav-link" href="#pricing" data-i18n="navPricing">Pricing</a></li>
+          <li><a class="nav-link" href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to Arabic" aria-pressed="false">
+          <span class="language-toggle__globe" aria-hidden="true">◌</span>
+          <span id="languageToggleLabel">العربية</span>
+        </button>
         <a class="nav-cta" data-wa href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20a%20website%20for%20my%20business" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
-          <span class="nav-cta-label">WhatsApp</span>
+          <span class="nav-cta-label" data-i18n="whatsApp">WhatsApp</span>
         </a>
         <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme" aria-pressed="false">
           <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.3 4.3l1.7 1.7M18 18l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.3 19.7L6 18M18 6l1.7-1.7"/></svg>
@@ -103,27 +107,21 @@
     <section class="hero" id="home" aria-labelledby="heroTitle">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Web Design Studio · Egypt</p>
-          <h1 id="heroTitle">Custom Websites for Local Businesses — <span class="grad">Pay Once, Own Forever</span></h1>
-          <p class="hero-sub">
-            Menus, service catalogs and online shops for restaurants, clinics, stores and
-            workshops — <strong>built with top-of-the-line AI, reviewed before sending to client.</strong>
-            Orders go straight to your WhatsApp with zero aggregator commissions.
-            One-time payment, standard cPanel hosting.
-          </p>
+          <p class="eyebrow" data-i18n="heroEyebrow">Web Design Studio · Egypt</p>
+          <h1 id="heroTitle" data-i18n-html="heroTitle">Custom websites for local businesses — <span class="grad">built to stay yours</span></h1>
+          <p class="hero-sub" data-i18n-html="heroSub">Menus, service catalogs and online shops for restaurants, clinics, stores and workshops — <strong>AI-assisted, carefully reviewed before delivery.</strong> Orders can go straight to your WhatsApp, without marketplace commission layers. Clear build pricing and standard cPanel hosting.</p>
           <div class="hero-actions">
             <a class="btn btn-primary btn-lg" data-wa href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20a%20website%20for%20my%20business" target="_blank" rel="noopener">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
-              Start on WhatsApp
+              <span data-i18n="startWhatsApp">Start on WhatsApp</span>
             </a>
             <a class="btn btn-glass btn-lg" href="#demos">
-              View Demo Templates
+              <span data-i18n="viewDemos">View demo templates</span>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Glass score card — mirrors the "Peak Score" widget -->
         <aside class="hero-side reveal" aria-label="Studio highlights">
           <div class="score-card" id="scoreCard">
             <svg class="ring" viewBox="0 0 72 72" aria-hidden="true">
@@ -131,26 +129,26 @@
               <circle class="ring-arc" id="ringArc" cx="36" cy="36" r="30" fill="none" stroke-width="6" stroke-linecap="round" transform="rotate(-90 36 36)"/>
             </svg>
             <div class="score-meta">
-              <p class="score-num">99.9<span class="score-pct">%</span></p>
-              <p class="score-label">Host-backed uptime</p>
+              <p class="score-num" data-i18n="scoreNumber">Clear</p>
+              <p class="score-label" data-i18n="scoreLabel">project scope</p>
             </div>
           </div>
           <ul class="hero-chips" aria-label="Quick facts">
-            <li class="chip">0% commissions</li>
-            <li class="chip chip-teal">Halal-ethical only</li>
-            <li class="chip">You own the files</li>
-            <li class="chip chip-teal">Built with top-tier AI</li>
+            <li class="chip" data-i18n="chipDirect">Direct-to-WhatsApp</li>
+            <li class="chip chip-teal" data-i18n="chipEthical">Ethical businesses only</li>
+            <li class="chip" data-i18n="chipFiles">Your files, handed over</li>
+            <li class="chip chip-teal" data-i18n="chipReview">AI-assisted · hand-reviewed</li>
           </ul>
         </aside>
       </div>
 
       <!-- Stat cards row -->
       <div class="container">
-        <dl class="stat-row reveal" aria-label="Studio track record">
-          <div class="stat-card"><dt class="stat-num">7 days</dt><dd class="stat-label">Average build</dd></div>
-          <div class="stat-card"><dt class="stat-num">0%</dt><dd class="stat-label">Aggregator commissions</dd></div>
-          <div class="stat-card"><dt class="stat-num">100%</dt><dd class="stat-label">Reviewed before delivery</dd></div>
-          <div class="stat-card"><dt class="stat-num">24/7</dt><dd class="stat-label">Order taking</dd></div>
+        <dl class="stat-row reveal" aria-label="How we work">
+          <div class="stat-card"><dt class="stat-num" data-i18n="stat1Number">Clear</dt><dd class="stat-label" data-i18n="stat1Label">scope before we start</dd></div>
+          <div class="stat-card"><dt class="stat-num" data-i18n="stat2Number">Direct</dt><dd class="stat-label" data-i18n="stat2Label">customer contact</dd></div>
+          <div class="stat-card"><dt class="stat-num" data-i18n="stat3Number">Reviewed</dt><dd class="stat-label" data-i18n="stat3Label">before handover</dd></div>
+          <div class="stat-card"><dt class="stat-num" data-i18n="stat4Number">Mobile</dt><dd class="stat-label" data-i18n="stat4Label">first by default</dd></div>
         </dl>
       </div>
     </section>
@@ -161,9 +159,9 @@
     <section class="section" id="services" aria-labelledby="servicesTitle">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Services</p>
-          <h2 id="servicesTitle">What we build</h2>
-          <p class="section-sub">Every project is a fast static website — built with top-of-the-line AI tools, then thoroughly reviewed line-by-line before sending to client. No databases, no monthly fees.</p>
+          <p class="eyebrow" data-i18n="servicesEyebrow">Services</p>
+          <h2 id="servicesTitle" data-i18n="servicesTitle">What we build</h2>
+          <p class="section-sub" data-i18n="servicesSub">Every project is a lightweight static website, supported by AI tools and reviewed before handover. It can run on standard hosting without a database.</p>
         </header>
 
         <div class="grid grid-4">
@@ -172,14 +170,14 @@
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16a1 1 0 0 1 1 1v13H3V4a1 1 0 0 1 1-1z"/><path d="M8 8h8M8 12h5"/><path d="M3 17l4 4h10l4-4"/><path d="M12 17v3"/></svg>
             </div>
-            <h3>Direct-to-WhatsApp Menus</h3>
-            <p>Interactive ordering menus for restaurants, cafés, bakeries and food trucks. Customers pick their items and the order arrives as a ready-to-send WhatsApp message.</p>
+            <h3 data-i18n="service1Title">Direct-to-WhatsApp menus</h3>
+            <p data-i18n="service1Copy">Interactive ordering menus for restaurants, cafés, bakeries and food trucks. Customers select items and their order is prepared as a WhatsApp message.</p>
             <ul class="check-list">
-              <li>Order cart — zero database required</li>
-              <li>Works on basic shared hosting</li>
-              <li>Easy price &amp; item updates</li>
+              <li data-i18n="service1Item1">Order cart — no database required</li>
+              <li data-i18n="service1Item2">Runs on standard shared hosting</li>
+              <li data-i18n="service1Item3">Straightforward price and item updates</li>
             </ul>
-            <a class="card-cta" href="./demos/restaurant/index.html">Try the restaurant demo
+            <a class="card-cta" href="./demos/restaurant/index.html"><span data-i18n="tryRestaurant">Try the restaurant demo</span>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </article>
@@ -189,14 +187,14 @@
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/><path d="M9.5 15.5l1.8 1.8 3.4-3.4"/></svg>
             </div>
-            <h3>Service Catalogs &amp; Appointments</h3>
-            <p>Professional listings with transparent pricing and direct booking requests for clinics, gyms, auto repair shops, tutoring centers and tailors.</p>
+            <h3 data-i18n="service2Title">Service catalogs &amp; appointments</h3>
+            <p data-i18n="service2Copy">Clear listings with pricing and direct booking requests for clinics, gyms, auto repair shops, tutoring centers and tailors.</p>
             <ul class="check-list">
-              <li>Booking requests via WhatsApp</li>
-              <li>Clear service &amp; price lists</li>
-              <li>Simple enquiry forms</li>
+              <li data-i18n="service2Item1">Booking requests via WhatsApp</li>
+              <li data-i18n="service2Item2">Clear service and price lists</li>
+              <li data-i18n="service2Item3">Simple enquiry forms</li>
             </ul>
-            <a class="card-cta" href="./demos/clinic/index.html">Try the clinic demo
+            <a class="card-cta" href="./demos/clinic/index.html"><span data-i18n="tryClinic">Try the clinic demo</span>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </article>
@@ -206,14 +204,14 @@
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7V6a6 6 0 0 1 12 0v1"/><path d="M4 7h16l-1.2 12.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8z"/><path d="M9 11a3 3 0 0 0 6 0"/></svg>
             </div>
-            <h3>Online Shops &amp; Catalogs</h3>
-            <p>Fast storefronts for phone &amp; electronics shops, home appliances, perfumes and handicrafts — with search, filters and an order cart that messages you on WhatsApp.</p>
+            <h3 data-i18n="service3Title">Online shops &amp; catalogs</h3>
+            <p data-i18n="service3Copy">Storefronts for electronics, home appliances, perfumes and handicrafts — with search, filters and an order cart that messages you on WhatsApp.</p>
             <ul class="check-list">
-              <li>Search, brand &amp; price filters</li>
-              <li>Product galleries &amp; stock badges</li>
-              <li>No payment gateway fees</li>
+              <li data-i18n="service3Item1">Search, brand and price filters</li>
+              <li data-i18n="service3Item2">Product galleries and stock badges</li>
+              <li data-i18n="service3Item3">Direct order messages, no checkout setup</li>
             </ul>
-            <a class="card-cta" href="./demos/electronics/index.html">Try the electronics shop demo
+            <a class="card-cta" href="./demos/electronics/index.html"><span data-i18n="tryElectronics">Try the electronics shop demo</span>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </article>
@@ -223,14 +221,14 @@
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M15 9h3a2 2 0 0 1 2 2v10"/><path d="M9 7h2M9 11h2M9 15h2"/></svg>
             </div>
-            <h3>Landing Pages &amp; Portfolios</h3>
-            <p>One-page professional sites for logistics companies, IT consultants, interior designers and contracting firms — built to collect quality leads.</p>
+            <h3 data-i18n="service4Title">Landing pages &amp; portfolios</h3>
+            <p data-i18n="service4Copy">One-page sites for logistics companies, consultants, interior designers and contractors — designed to make contacting you easy.</p>
             <ul class="check-list">
-              <li>Lead collection forms</li>
-              <li>Google Maps &amp; service areas</li>
-              <li>Contact details front &amp; center</li>
+              <li data-i18n="service4Item1">Enquiry forms</li>
+              <li data-i18n="service4Item2">Maps and service areas</li>
+              <li data-i18n="service4Item3">Contact details front and center</li>
             </ul>
-            <a class="card-cta" href="./demos/contractor/index.html">Try the contractor demo
+            <a class="card-cta" href="./demos/contractor/index.html"><span data-i18n="tryContractor">Try the contractor demo</span>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </article>
@@ -242,8 +240,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"/><path d="M19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9z"/><path d="M5 15l.7 1.6L7.3 17.3l-1.6.7L5 19.6l-.7-1.6L2.7 17.3l1.6-.7z"/></svg>
           </div>
           <div>
-            <h3>Built with top-of-the-line AI — reviewed before sending to client</h3>
-            <p>Every El-Peak website is designed, written and coded with the help of state-of-the-art AI tools, then thoroughly reviewed line-by-line before sending to client — premium quality at a price a local business can afford.</p>
+            <h3 data-i18n="aiTitle">AI-assisted, then reviewed by hand</h3>
+            <p data-i18n="aiCopy">We use AI tools as part of the design and build process, then check the content, layout and interactions before handing the site over.</p>
           </div>
         </aside>
       </div>
@@ -255,18 +253,18 @@
     <section class="section section-alt" id="demos" aria-labelledby="demosTitle">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Live demos</p>
-          <h2 id="demosTitle">Live demo templates</h2>
-          <p class="section-sub">Fully interactive templates, each with its own design and color identity. Open one and imagine it with your brand and prices.</p>
+          <p class="eyebrow" data-i18n="demosEyebrow">Live demos</p>
+          <h2 id="demosTitle" data-i18n="demosTitle">Demo templates, ready to explore</h2>
+          <p class="section-sub" data-i18n="demosSub">Interactive samples with distinct design identities. Open one and picture it with your own brand, content and pricing.</p>
         </header>
 
         <!-- Filter tabs (pill style, like the navbar) -->
         <div class="demo-tabs reveal" role="tablist" aria-label="Filter demos by type">
-          <button class="demo-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all">All demos</button>
-          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="food">Food &amp; Drink</button>
-          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="retail">Retail &amp; Shops</button>
-          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="health">Health &amp; Services</button>
-          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="corporate">Corporate</button>
+          <button class="demo-tab is-active" type="button" role="tab" aria-selected="true" data-filter="all" data-i18n="tabAll">All demos</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="food" data-i18n="tabFood">Food &amp; drink</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="retail" data-i18n="tabRetail">Retail &amp; shops</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="health" data-i18n="tabHealth">Health &amp; services</button>
+          <button class="demo-tab" type="button" role="tab" aria-selected="false" data-filter="corporate" data-i18n="tabCorporate">Corporate</button>
         </div>
 
         <div class="grid grid-2 demo-grid" id="demoGrid">
@@ -274,14 +272,14 @@
           <article class="card demo-card reveal" data-category="food">
             <a class="demo-thumb" href="./demos/restaurant/index.html" target="_blank" rel="noopener" aria-label="Open Restaurant WhatsApp Menu live demo">
               <img src="demos/restaurant/assets/r-hero.jpg" alt="Preview of the restaurant demo: a warm Middle-Eastern dining table filled with grilled meats, mezze and fresh sides" width="1200" height="800" loading="lazy">
-              <span class="demo-tag tag-food">Interactive cart</span>
+               <span class="demo-tag tag-food" data-i18n="tagFood">Interactive cart</span>
             </a>
             <div class="demo-body">
-              <h3>Restaurant WhatsApp Menu</h3>
-              <p>A full digital menu with categories, photos, prices and an order cart that turns selections into a neat WhatsApp order message.</p>
+               <h3 data-i18n="demo1Title">Restaurant WhatsApp menu</h3>
+               <p data-i18n="demo1Copy">A digital menu with categories, photos, prices and an order cart that prepares a neat WhatsApp order message.</p>
               <div class="demo-actions">
-                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/restaurant/index.html" data-demo-title="Restaurant WhatsApp Menu">Quick preview</button>
-                <a class="btn btn-glass btn-sm" href="./demos/restaurant/index.html" target="_blank" rel="noopener">View live demo
+                 <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/restaurant/index.html" data-demo-title="Restaurant WhatsApp Menu" data-i18n="quickPreview">Quick preview</button>
+                 <a class="btn btn-glass btn-sm" href="./demos/restaurant/index.html" target="_blank" rel="noopener"><span data-i18n="viewLive">Open demo</span>
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
                 </a>
               </div>
@@ -292,14 +290,14 @@
           <article class="card demo-card reveal" data-category="retail">
             <a class="demo-thumb" href="./demos/electronics/index.html" target="_blank" rel="noopener" aria-label="Open Electronics &amp; Phones Shop live demo">
               <img src="demos/electronics/assets/e-hero.jpg" alt="Preview of the electronics shop demo: a sleek smartphone on a dark studio background with lime accent lighting" width="1200" height="800" loading="lazy">
-              <span class="demo-tag tag-retail">Cart + filters</span>
+               <span class="demo-tag tag-retail" data-i18n="tagRetail">Cart + filters</span>
             </a>
             <div class="demo-body">
-              <h3>Electronics &amp; Phones Shop</h3>
-              <p>A fast online storefront for phone and electronics shops — search, brand &amp; category filters, stock badges and a cart that turns orders into a WhatsApp message.</p>
+               <h3 data-i18n="demo2Title">Electronics &amp; phone shop</h3>
+               <p data-i18n="demo2Copy">A shop sample with search, brand and category filters, stock badges and a cart that prepares a WhatsApp order.</p>
               <div class="demo-actions">
-                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/electronics/index.html" data-demo-title="Electronics &amp; Phones Shop">Quick preview</button>
-                <a class="btn btn-glass btn-sm" href="./demos/electronics/index.html" target="_blank" rel="noopener">View live demo
+                 <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/electronics/index.html" data-demo-title="Electronics &amp; Phones Shop" data-i18n="quickPreview">Quick preview</button>
+                 <a class="btn btn-glass btn-sm" href="./demos/electronics/index.html" target="_blank" rel="noopener"><span data-i18n="viewLive">Open demo</span>
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
                 </a>
               </div>
@@ -310,14 +308,14 @@
           <article class="card demo-card reveal" data-category="health">
             <a class="demo-thumb" href="./demos/clinic/index.html" target="_blank" rel="noopener" aria-label="Open Clinic Appointments Page live demo">
               <img src="demos/clinic/assets/c-hero.jpg" alt="Preview of the clinic demo: a bright modern dental clinic with a clean treatment chair" width="1200" height="800" loading="lazy">
-              <span class="demo-tag tag-health">Booking form</span>
+               <span class="demo-tag tag-health" data-i18n="tagHealth">Booking form</span>
             </a>
             <div class="demo-body">
-              <h3>Clinic Appointments Page</h3>
-              <p>Services with transparent pricing and an appointment request form that sends patient details to the clinic's WhatsApp.</p>
+               <h3 data-i18n="demo3Title">Clinic appointment page</h3>
+               <p data-i18n="demo3Copy">Services with transparent pricing and an appointment request form that prepares a message for the clinic.</p>
               <div class="demo-actions">
-                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/clinic/index.html" data-demo-title="Clinic Appointments Page">Quick preview</button>
-                <a class="btn btn-glass btn-sm" href="./demos/clinic/index.html" target="_blank" rel="noopener">View live demo
+                 <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/clinic/index.html" data-demo-title="Clinic Appointments Page" data-i18n="quickPreview">Quick preview</button>
+                 <a class="btn btn-glass btn-sm" href="./demos/clinic/index.html" target="_blank" rel="noopener"><span data-i18n="viewLive">Open demo</span>
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
                 </a>
               </div>
@@ -328,14 +326,14 @@
           <article class="card demo-card reveal" data-category="corporate">
             <a class="demo-thumb" href="./demos/contractor/index.html" target="_blank" rel="noopener" aria-label="Open Contractor Landing Page live demo">
               <img src="demos/contractor/assets/x-hero.jpg" alt="Preview of the contracting company demo: a construction site with scaffolding at golden hour" width="1200" height="800" loading="lazy">
-              <span class="demo-tag tag-corporate">Lead capture</span>
+               <span class="demo-tag tag-corporate" data-i18n="tagCorporate">Enquiry form</span>
             </a>
             <div class="demo-body">
-              <h3>Contractor Landing Page</h3>
-              <p>A confident one-page site for contracting and service companies: portfolio, service areas, and a lead form wired to WhatsApp.</p>
+               <h3 data-i18n="demo4Title">Contractor landing page</h3>
+               <p data-i18n="demo4Copy">A one-page site for contractors and service companies: portfolio, service areas and a WhatsApp-ready enquiry form.</p>
               <div class="demo-actions">
-                <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/contractor/index.html" data-demo-title="Contractor Landing Page">Quick preview</button>
-                <a class="btn btn-glass btn-sm" href="./demos/contractor/index.html" target="_blank" rel="noopener">View live demo
+                 <button class="btn btn-primary btn-sm" type="button" data-demo="./demos/contractor/index.html" data-demo-title="Contractor Landing Page" data-i18n="quickPreview">Quick preview</button>
+                 <a class="btn btn-glass btn-sm" href="./demos/contractor/index.html" target="_blank" rel="noopener"><span data-i18n="viewLive">Open demo</span>
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
                 </a>
               </div>
@@ -351,25 +349,25 @@
     <section class="section" id="hosting" aria-labelledby="hostingTitle">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Simple technology</p>
-          <h2 id="hostingTitle">Built for standard cPanel hosting</h2>
-          <p class="section-sub">Your website is a set of lightweight files. Upload them once to any shared host — Hostinger, Namecheap and similar — and it works.</p>
+          <p class="eyebrow" data-i18n="hostingEyebrow">Simple technology</p>
+          <h2 id="hostingTitle" data-i18n="hostingTitle">Built for standard cPanel hosting</h2>
+          <p class="section-sub" data-i18n="hostingSub">Your website is a set of lightweight files. Upload it to a compatible shared host — such as Hostinger or Namecheap — and it can run without a database.</p>
         </header>
 
         <div class="grid grid-3">
-          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>99.9% uptime</h3><p>Your host's guarantee keeps the site online around the clock.</p></div></div>
-          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Free SSL (HTTPS)</h3><p>Let's Encrypt certificates via cPanel — secure and trusted by visitors.</p></div></div>
-          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Zero maintenance</h3><p>No plugins, no databases, nothing to update or break.</p></div></div>
-          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Custom domain email</h3><p>Look professional with addresses like info@yourbusiness.com.</p></div></div>
-          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>24/7 host support</h3><p>Your hosting provider handles server issues — we handle the website.</p></div></div>
-          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3>Automatic backups</h3><p>cPanel and most hosts back up your files regularly.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3 data-i18n="perk1Title">Lightweight by design</h3><p data-i18n="perk1Copy">Static files keep the setup small and straightforward.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3 data-i18n="perk2Title">HTTPS-ready</h3><p data-i18n="perk2Copy">We can configure SSL where it is included with your hosting plan.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3 data-i18n="perk3Title">Fewer moving parts</h3><p data-i18n="perk3Copy">No plugins or database are needed for these static websites.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3 data-i18n="perk4Title">Business email options</h3><p data-i18n="perk4Copy">Email availability depends on the hosting plan you choose.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3 data-i18n="perk5Title">Hosting plan support</h3><p data-i18n="perk5Copy">Support terms and availability are set by your chosen host.</p></div></div>
+          <div class="perk reveal"><span class="perk-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span><div><h3 data-i18n="perk6Title">Backups to confirm</h3><p data-i18n="perk6Copy">We help you check the backup options included with your plan.</p></div></div>
         </div>
 
         <!-- 3-step process -->
         <div class="steps reveal" aria-label="How it works in three steps">
-          <div class="step"><span class="step-num">1</span><h3>Choose a package</h3><p>Tell us about your business on WhatsApp — we'll recommend the right fit.</p></div>
-          <div class="step"><span class="step-num">2</span><h3>We build &amp; deploy</h3><p>We design the site, upload it to your cPanel and test everything with you.</p></div>
-          <div class="step"><span class="step-num">3</span><h3>You own it forever</h3><p>The files are yours — one-time payment, lifetime use.</p></div>
+          <div class="step"><span class="step-num">1</span><h3 data-i18n="step1Title">Share the brief</h3><p data-i18n="step1Copy">Tell us about your business on WhatsApp and we’ll agree the scope.</p></div>
+          <div class="step"><span class="step-num">2</span><h3 data-i18n="step2Title">We build &amp; set up</h3><p data-i18n="step2Copy">We design the site, upload it to cPanel and test the key flows with you.</p></div>
+          <div class="step"><span class="step-num">3</span><h3 data-i18n="step3Title">You receive the files</h3><p data-i18n="step3Copy">Once complete, the site files are handed over for you to keep.</p></div>
         </div>
       </div>
     </section>
@@ -380,28 +378,28 @@
     <section class="section section-alt" id="pricing" aria-labelledby="pricingTitle">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Honest pricing</p>
-          <h2 id="pricingTitle">Pay once. Own it forever.</h2>
-          <p class="section-sub">One transparent build fee — plus two flat add-ons: annual hosting &amp; domain, and on-demand updates whenever your content changes. No monthly retainers, no interest-based installments.</p>
+          <p class="eyebrow" data-i18n="pricingEyebrow">Clear pricing</p>
+          <h2 id="pricingTitle" data-i18n="pricingTitle">A clear build fee, with optional add-ons</h2>
+          <p class="section-sub" data-i18n="pricingSub">One build fee, plus annual hosting and domain if needed, and optional content updates when your information changes. No platform subscription is built into this package.</p>
         </header>
 
         <div class="grid grid-2 pricing-grid">
           <!-- Package 1 — ACTIVE TIER -->
           <article class="card price-card is-featured reveal" aria-label="Complete Static Website package">
-            <span class="featured-tag">Available now</span>
-            <h3>Package 1 — Complete Static Website</h3>
-            <p class="price"><span class="currency">EGP</span><span class="amount">1,500</span><span class="period">one-time build fee</span></p>
-            <p class="price-note">Best for restaurants, cafés, retail shops, clinics, service catalogs and local small businesses.</p>
+            <span class="featured-tag" data-i18n="availableNow">Available now</span>
+            <h3 data-i18n="package1Title">Package 1 — Complete static website</h3>
+            <p class="price"><span class="currency">EGP</span><span class="amount">1,500</span><span class="period" data-i18n="oneTimeFee">one-time build fee</span></p>
+            <p class="price-note" data-i18n="package1Note">For restaurants, cafés, retail shops, clinics, service catalogs and local small businesses.</p>
             <ul class="check-list">
-              <li>1-page custom responsive, mobile-first static layout</li>
-              <li>Interactive WhatsApp ordering &amp; inquiry system — pre-filled messages with selected items, subtotal, customer notes &amp; delivery address</li>
-              <li>Category filtering and out-of-stock item management via JS</li>
-              <li>Integrated Google Maps location, social links &amp; contact buttons</li>
-              <li>Built to run smoothly on cPanel shared hosting</li>
-              <li>Zero aggregator commissions — every order goes directly to you</li>
+              <li data-i18n="package1Item1">One-page custom responsive, mobile-first static layout</li>
+              <li data-i18n="package1Item2">Interactive WhatsApp ordering and enquiry messages with selected items and customer notes</li>
+              <li data-i18n="package1Item3">Category filtering and out-of-stock item controls via JavaScript</li>
+              <li data-i18n="package1Item4">Map location, social links and contact buttons</li>
+              <li data-i18n="package1Item5">Prepared for standard cPanel shared hosting</li>
+              <li data-i18n="package1Item6">Orders can go directly to your WhatsApp</li>
             </ul>
-            <p class="price-addon-note">Hosting &amp; domain billed separately: <strong>500 EGP/year</strong> — see add-ons below.</p>
-            <a class="btn btn-primary btn-block" data-wa data-wa-message="Hi! I'm interested in the Complete Static Website package (1,500 EGP one-time build fee)." href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20the%20Complete%20Static%20Website%20package" target="_blank" rel="noopener">Start your website on WhatsApp</a>
+            <p class="price-addon-note" data-i18n-html="hostingNote">Hosting and domain are billed separately: <strong>500 EGP/year</strong> — see add-ons below.</p>
+            <a class="btn btn-primary btn-block" data-wa data-wa-message="Hi! I'm interested in the Complete Static Website package (1,500 EGP one-time build fee)." href="https://wa.me/201012464714?text=Hi!%20I%27m%20interested%20in%20the%20Complete%20Static%20Website%20package" target="_blank" rel="noopener"><span data-i18n="startWebsite">Start your website on WhatsApp</span></a>
           </article>
 
           <!-- Package 2 — COMING SOON (faded card + prominent overlay badge) -->
@@ -430,11 +428,11 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
               </span>
               <div>
-                <h3>Annual Hosting &amp; Domain</h3>
+                <h3 data-i18n="hostingAddonTitle">Annual hosting &amp; domain</h3>
                 <p class="addon-price"><strong>500 EGP</strong> <span>/ year</span></p>
               </div>
             </div>
-            <p class="addon-note">Billed separately for all websites.</p>
+            <p class="addon-note" data-i18n="hostingAddonNote">Billed separately for all websites.</p>
             <ul class="check-list">
               <li>High-speed cPanel web hosting setup</li>
               <li>Custom domain registration / renewal (.com or local)</li>
@@ -449,11 +447,11 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
               </span>
               <div>
-                <h3>On-Demand Content Updates</h3>
+                <h3 data-i18n="updatesTitle">On-demand content updates</h3>
                 <p class="addon-price"><strong>400 EGP</strong> <span>/ update request</span></p>
               </div>
             </div>
-            <p class="addon-note">Per iteration — request only when you need it.</p>
+            <p class="addon-note" data-i18n="updatesNote">Per iteration — request only when you need it.</p>
             <ul class="check-list">
               <li>Swap menu / catalog photos</li>
               <li>Update prices &amp; modify text</li>
@@ -463,7 +461,7 @@
           </article>
         </div>
 
-        <p class="pricing-footnote reveal">All prices in Egyptian Pounds (EGP). Payment is made directly to us — in full or two milestone payments. We never arrange interest-based financing, and we only serve halal-compliant businesses.</p>
+        <p class="pricing-footnote reveal" data-i18n="pricingFootnote">All prices are in Egyptian Pounds (EGP). Payment is made directly to us, in full or across two agreed milestones. We only work with businesses that operate ethically.</p>
       </div>
     </section>
 
@@ -473,9 +471,9 @@
     <section class="section" id="contact" aria-labelledby="contactTitle">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
-          <p class="eyebrow">Contact</p>
-          <h2 id="contactTitle">Request a quote</h2>
-          <p>Tell us about your business and we'll reply with a timeline and a quote — usually within a few hours.</p>
+          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+          <h2 id="contactTitle" data-i18n="contactTitle">Request a quote</h2>
+          <p data-i18n="contactCopy">Tell us about your business and we’ll come back with a timeline and a quote.</p>
           <ul class="contact-details">
             <li>
               <a class="contact-line" href="tel:+201012464714" aria-label="Call +20 101 246 4714 directly">
@@ -500,13 +498,13 @@
 
         <!-- This form never touches a server: it composes a WhatsApp message -->
         <form class="card contact-form reveal" id="contactForm" novalidate>
-          <h3>Send a quick brief</h3>
+          <h3 data-i18n="briefTitle">Send a quick brief</h3>
           <div class="field">
-            <label for="cfName">Your name <span aria-hidden="true">*</span></label>
+            <label for="cfName" data-i18n-html="nameLabel">Your name <span aria-hidden="true">*</span></label>
             <input id="cfName" name="name" type="text" autocomplete="name" required placeholder="e.g. Ahmed Hassan">
           </div>
           <div class="field">
-            <label for="cfTypeTrigger" id="cfTypeLabel">Business type</label>
+            <label for="cfTypeTrigger" id="cfTypeLabel" data-i18n="businessType">Business type</label>
             <div class="custom-select-wrap" id="cfTypeWrap">
               <select id="cfType" name="type" class="custom-select-native" tabindex="-1" aria-hidden="true">
                 <option value="Restaurant / Café / Bakery" selected>Restaurant / Café / Bakery</option>
@@ -546,15 +544,15 @@
             </div>
           </div>
           <div class="field">
-            <label for="cfMsg">What do you need? <span aria-hidden="true">*</span></label>
+            <label for="cfMsg" data-i18n-html="needsLabel">What do you need? <span aria-hidden="true">*</span></label>
             <textarea id="cfMsg" name="message" rows="4" required placeholder="e.g. I run a small bakery and want a menu page where customers can order via WhatsApp…"></textarea>
           </div>
           <p class="form-hint" id="cfHint" role="status" aria-live="polite"></p>
           <button class="btn btn-primary btn-block" type="submit">
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-2.92-.62-2.27-1.03-3.7-3.4-3.81-3.56-.11-.16-.9-1.25-.86-2.36.04-1.11.62-1.64.84-1.87.22-.23.48-.28.64-.28.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.75.74 1.87.06.13.1.28.01.44-.08.17-.17.27-.33.44-.16.17-.34.38-.24.56.1.18.45.76.97 1.24.67.61 1.23.81 1.41.9.18.09.29.08.4-.04.11-.13.46-.53.59-.71.12-.18.25-.15.42-.09.17.06 1.1.55 1.29.65.19.1.31.15.36.23.05.09.05.51-.19 1.2z"/></svg>
-            Send via WhatsApp
+            <span data-i18n="sendWhatsApp">Send via WhatsApp</span>
           </button>
-          <p class="form-disclaimer">Opens WhatsApp with your message pre-filled — nothing is stored on any server.</p>
+          <p class="form-disclaimer" data-i18n="formDisclaimer">Opens WhatsApp with your message pre-filled — this form does not store your information on a server.</p>
         </form>
       </div>
     </section>
