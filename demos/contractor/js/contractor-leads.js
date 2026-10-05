@@ -19,27 +19,27 @@
   var SERVICES = [
     {
       title: 'New Builds',
-      description: 'Ground-up residential and commercial construction — from foundation to final handover, engineered to code and priced to last.'
+      description: 'A sample service card for ground-up residential and commercial construction. Replace with your actual scope and credentials.'
     },
     {
       title: 'Renovations & Remodels',
-      description: 'Full home and unit renovations with honest advice on what is worth changing — and what is not.'
+      description: 'A sample service card for home and unit renovations, ready to be tailored to your team’s process.'
     },
     {
       title: 'Kitchen & Bathroom Fit-Outs',
-      description: 'Complete wet-area upgrades: tiling, plumbing, joinery and lighting, delivered by specialist crews.'
+      description: 'A sample service card for tiling, plumbing, joinery and lighting work.'
     },
     {
       title: 'Office Fit-Outs',
-      description: 'Partitions, flooring, MEP and joinery for workplaces — delivered after hours so your business keeps running.'
+      description: 'A sample service card for partitions, flooring, MEP and joinery for workplaces.'
     },
     {
       title: 'Landscaping & Exteriors',
-      description: 'Gardens, pergolas, façades and external finishes built to stand up to Cairo sun and dust.'
+      description: 'A sample service card for gardens, pergolas, façades and external finishes.'
     },
     {
       title: 'Maintenance Contracts',
-      description: 'Scheduled preventive maintenance for villas, offices and retail — one number to call, one fixed monthly cost.'
+      description: 'A sample service card for recurring maintenance plans and repair requests.'
     }
   ];
 
