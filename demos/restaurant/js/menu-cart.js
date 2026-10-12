@@ -15,18 +15,19 @@
      -------------------------------------------------------------- */
   var MENU = [
     // Appetizers
-    { id: 'hummus',     name: 'Creamy Hummus',        desc: 'Silky chickpea purée whipped with tahini, lemon and our own olive oil, served with warm flatbread.',            price: 85,  category: 'appetizers', img: 'assets/r-hummus.jpg',     imgAlt: 'Bowl of creamy hummus swirled with olive oil and topped with chickpeas and parsley' },
+    { id: 'hummus',     name: 'Creamy Hummus',        badge: 'Classic', desc: 'Silky chickpea purée whipped with tahini, lemon and our own olive oil, served with warm flatbread.',            price: 85,  category: 'appetizers', img: 'assets/r-hummus.jpg',     imgAlt: 'Bowl of creamy hummus swirled with olive oil and topped with chickpeas and parsley' },
     { id: 'falafel',    name: 'Crispy Falafel',       desc: 'Golden chickpea-and-herb fritters — crisp outside, fluffy inside — with a sesame tahini dip.',                  price: 70,  category: 'appetizers', img: 'assets/r-falafel.jpg',    imgAlt: 'Plate of golden crispy falafel balls with tahini dipping sauce and fresh herbs' },
     { id: 'fattoush',   name: 'Fattoush Salad',       desc: 'Crunchy romaine, tomato and radish tossed with sumac, fresh mint and toasted pita chips.',                      price: 90,  category: 'appetizers', img: 'assets/r-fattoush.jpg',   imgAlt: 'Fresh fattoush salad with romaine, tomatoes, radish and crisp pita chips' },
     { id: 'vineleaves', name: 'Stuffed Vine Leaves',  desc: 'Hand-rolled vine leaves filled with herbed rice, slow-cooked with lemon and olive oil until glossy.',           price: 80,  category: 'appetizers', img: 'assets/r-vineleaves.jpg', imgAlt: 'Rolls of stuffed vine leaves arranged in a circle with lemon wedges' },
     // Main Courses
-    { id: 'shawarma',   name: 'Chicken Shawarma Wrap', desc: 'Marinated chicken carved straight off the spit, wrapped with garlic sauce, pickles and fries.',                price: 120, category: 'mains',      img: 'assets/r-shawarma.jpg',   imgAlt: 'Chicken shawarma wrap sliced open showing garlic sauce, pickles and fries' },
+    { id: 'shawarma',   name: 'Chicken Shawarma Wrap', badge: 'Bestseller', desc: 'Marinated chicken carved straight off the spit, wrapped with garlic sauce, pickles and fries.',                price: 120, category: 'mains',      img: 'assets/r-shawarma.jpg',   imgAlt: 'Chicken shawarma wrap sliced open showing garlic sauce, pickles and fries' },
     { id: 'kebab',      name: 'Lamb Kebab Plate',     desc: 'Charcoal-grilled minced lamb kebabs with grilled tomato, onion salad and saffron rice.',                        price: 175, category: 'mains',      img: 'assets/r-kebab.jpg',      imgAlt: 'Charcoal-grilled lamb kebab skewers served over saffron rice with grilled tomato' },
-    { id: 'mixedgrill', name: 'Mixed Grill Feast',    desc: 'A sharing platter of shish tawook, lamb kebab and kofta with house mezze and fresh bread — feeds two.',         price: 260, category: 'mains',      img: 'assets/r-mixedgrill.jpg', imgAlt: 'Large mixed grill platter with chicken tawook, lamb kebab and kofta skewers' },
-    { id: 'mandi',      name: 'Lamb Mandi',           desc: 'Slow-roasted lamb over smoky basmati rice with toasted almonds, raisins and house mandi spices.',               price: 210, category: 'mains',      img: 'assets/r-mandi.jpg',      imgAlt: 'Fall-apart roasted lamb served on a bed of smoky mandi rice with almonds' },
+    { id: 'mixedgrill', name: 'Mixed Grill Feast',    badge: 'Feeds 2', desc: 'A sharing platter of shish tawook, lamb kebab and kofta with house mezze and fresh bread — feeds two.',         price: 260, category: 'mains',      img: 'assets/r-mixedgrill.jpg', imgAlt: 'Large mixed grill platter with chicken tawook, lamb kebab and kofta skewers' },
+    { id: 'mandi',      name: 'Lamb Mandi',           badge: 'Smoked', desc: 'Slow-roasted lamb over smoky basmati rice with toasted almonds, raisins and house mandi spices.',               price: 210, category: 'mains',      img: 'assets/r-mandi.jpg',      imgAlt: 'Fall-apart roasted lamb served on a bed of smoky mandi rice with almonds' },
+    { id: 'shank',      name: 'Smoked Lamb Shank',    badge: 'Chef Special', desc: 'Chef feature: 6-hour slow braise with dried lime, cardamom and pomegranate glaze over roasted green wheat freekeh.', price: 285, category: 'mains', img: 'assets/r-mandi.jpg',      imgAlt: 'Smoked lamb shank with freekeh and pine nuts' },
     // Desserts
     { id: 'baklava',    name: 'Pistachio Baklava',    desc: 'Layered filo pastry filled with crushed pistachios and finished with a light orange-blossom syrup.',            price: 60,  category: 'desserts',   img: 'assets/r-baklava.jpg',    imgAlt: 'Diamond pieces of pistachio baklava stacked on a small plate' },
-    { id: 'kunafa',     name: 'Cheese Kunafa',        desc: 'Warm, stretchy cheese under shredded golden pastry with rose syrup and crushed pistachio.',                     price: 70,  category: 'desserts',   img: 'assets/r-kunafa.jpg',     imgAlt: 'Round golden cheese kunafa topped with crushed pistachios and syrup' },
+    { id: 'kunafa',     name: 'Cheese Kunafa',        badge: 'Warm & Fresh', desc: 'Warm, stretchy cheese under shredded golden pastry with rose syrup and crushed pistachio.',                     price: 70,  category: 'desserts',   img: 'assets/r-kunafa.jpg',     imgAlt: 'Round golden cheese kunafa topped with crushed pistachios and syrup' },
     // Beverages
     { id: 'minttea',    name: 'Fresh Mint Tea',       desc: 'Pot of green tea packed with fresh mint leaves, poured high and served hot.',                                   price: 35,  category: 'beverages',  img: 'assets/r-minttea.jpg',    imgAlt: 'Glass pot of fresh mint tea with green mint leaves steeping inside' },
     { id: 'lemonade',   name: 'Mint Lemonade',        desc: 'Hand-blended whole lemons whizzed with fresh mint and crushed ice — the Levantine classic.',                    price: 45,  category: 'beverages',  img: 'assets/r-lemonade.jpg',   imgAlt: 'Tall frothy glass of mint lemonade garnished with a mint sprig' }
@@ -199,9 +200,13 @@
    * @returns {string} HTML markup
    */
   function menuItemHTML(item) {
+    var badgeHTML = item.badge ? '<span class="menu-item__tag">' + esc(item.badge) + '</span>' : '';
     return '' +
       '<article class="menu-item">' +
-        '<img class="menu-item__photo" src="' + esc(item.img) + '" alt="' + esc(item.imgAlt) + '" width="140" height="140" loading="lazy">' +
+        '<div class="menu-item__media">' +
+          '<img class="menu-item__photo" src="' + esc(item.img) + '" alt="' + esc(item.imgAlt) + '" width="140" height="140" decoding="async">' +
+          badgeHTML +
+        '</div>' +
         '<div class="menu-item__body">' +
           '<h3 class="menu-item__name">' + esc(item.name) + '</h3>' +
           '<p class="menu-item__desc">' + esc(item.desc) + '</p>' +
@@ -719,10 +724,12 @@
       });
     }
 
-    /* Specials chip — demo only, no messaging backend */
+    /* Specials chip — adds the signature Smoked Lamb Shank */
     if (els.specialsChip) {
       els.specialsChip.addEventListener('click', function () {
-        showToast('Demo preview — ask your waiter on the real site!');
+        addToCart('shank');
+        openDrawer();
+        showToast('Added Smoked Lamb Shank to your order');
       });
     }
 

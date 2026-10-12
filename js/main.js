@@ -30,9 +30,18 @@
       whatsApp: 'واتساب', heroEyebrow: 'استوديو تصميم مواقع · مصر',
       heroTitle: 'مواقع مخصصة للمشاريع المحلية — <span class="grad">مصممة لتبقى ملكك</span>',
       heroSub: 'قوائم طعام، وكتالوجات خدمات، ومتاجر للمطاعم والعيادات والمحلات والورش — <strong>نستعين بالذكاء الاصطناعي ثم نراجع العمل بعناية قبل التسليم.</strong> يمكن أن تصل الطلبات إلى واتسابك مباشرة، من دون طبقات عمولات المنصات. سعر بناء واضح واستضافة cPanel عادية.',
-      startWhatsApp: 'ابدأ عبر واتساب', viewDemos: 'استعرض النماذج', scoreNumber: 'نطاق', scoreLabel: 'واضح للمشروع',
-      chipDirect: 'طلبات مباشرة عبر واتساب', chipEthical: 'للمشاريع الأخلاقية فقط', chipFiles: 'ملفاتك تُسلَّم إليك', chipReview: 'بمساعدة الذكاء الاصطناعي · مراجعة بشرية',
-      stat1Number: 'اتفاق', stat1Label: 'على النطاق قبل البدء', stat2Number: 'تواصل', stat2Label: 'مباشر مع العملاء', stat3Number: 'مراجعة', stat3Label: 'قبل التسليم', stat4Number: 'للجوال', stat4Label: 'أولاً بشكل افتراضي',
+      startWhatsApp: 'ابدأ عبر واتساب', viewDemos: 'استعرض النماذج',
+      deckBadge: 'نماذج حية لمشاريع حقيقية', deckTitle: 'مصممة لأربعة أنشطة تجارية',
+      miniTagFood: 'مطاعم وضيافة', miniDescFood: 'قائمة طعام وسلة طلبات واتساب',
+      miniTagRetail: 'تجزئة وإلكترونيات', miniDescRetail: 'فلاتر مواصفات وسلة طلبات',
+      miniTagHealth: 'رعاية صحية', miniDescHealth: 'كتالوج خدمات ونموذج حجز موعد',
+      miniTagCorp: 'مقاولات وشركات', miniDescCorp: 'معرض أعمال وموجز مناقصات',
+      previewAction: 'معاينة ←',
+      deckFoot: 'ملفات HTML/CSS/JS ثابتة 100% · بلا قواعد بيانات أو أعطال',
+      stat1Number: '0%', stat1Label: 'عمولات منصات — الطلبات تصلك مباشرة بلا وسطاء',
+      stat2Number: '1,500 ج.م', stat2Label: 'سعر بناء واضح وثابت لمرة واحدة',
+      stat3Number: '100%', stat3Label: 'ملفات موقعك تُسلّم إليك بالكامل لـ cPanel',
+      stat4Number: 'مراجعة دقيقة', stat4Label: 'فحص يدوي سطر بسطر قبل التسليم النهائي',
       servicesEyebrow: 'الخدمات', servicesTitle: 'ما الذي نبنيه؟', servicesSub: 'كل مشروع موقع ثابت وخفيف، نستعين بأدوات الذكاء الاصطناعي فيه ونراجعه قبل التسليم. ويمكن تشغيله على استضافة عادية من دون قاعدة بيانات.',
       service1Title: 'قوائم طلبات عبر واتساب', service1Copy: 'قوائم تفاعلية للمطاعم والمقاهي والمخابز وعربات الطعام. يختار العميل الأصناف ويُجهّز الطلب كرسالة واتساب.',
       service1Item1: 'سلة طلبات من دون قاعدة بيانات', service1Item2: 'تعمل على الاستضافة المشتركة العادية', service1Item3: 'تحديثات مباشرة للأسعار والأصناف', tryRestaurant: 'جرّب نموذج المطعم',
@@ -273,7 +282,8 @@
     });
 
     $$('[data-demo]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
+        if (btn.tagName === 'A') e.preventDefault();
         open(btn.getAttribute('data-demo'), btn.getAttribute('data-demo-title'));
       });
     });
@@ -293,9 +303,11 @@
     var items = $$('.reveal');
     if (!items.length) return;
 
-    if (!('IntersectionObserver' in window)) {
+    fillRing();
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
       items.forEach(function (el) { el.classList.add('is-visible'); });
-      fillRing();
       return;
     }
 
@@ -303,15 +315,19 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-visible');
-        // The ring lives inside the revealed hero-side wrapper (or IS the card).
-        if (entry.target.id === 'scoreCard' || entry.target.querySelector && entry.target.querySelector('#ringArc')) {
-          fillRing();
-        }
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.18 });
+    }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
 
-    items.forEach(function (el) { observer.observe(el); });
+    items.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('is-visible');
+      } else {
+        el.classList.add('reveal-pending');
+        observer.observe(el);
+      }
+    });
 
     /** Keeps the optional hero ornament ready for themes that use it. */
     function fillRing() {

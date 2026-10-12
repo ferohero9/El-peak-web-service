@@ -198,6 +198,11 @@ a { color: inherit; }
   background: var(--card); border: 2px solid var(--ink); border-radius: 999px;
   padding: 10px 14px; min-height: 46px; cursor: pointer;
 }
+@media (max-width: 580px) {
+  .search { flex: 1 1 100%; }
+  .select { flex: 1 1 calc(50% - 6px); }
+  .select select { width: 100%; }
+}
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
   font: inherit; font-weight: 800; font-size: 0.86rem;

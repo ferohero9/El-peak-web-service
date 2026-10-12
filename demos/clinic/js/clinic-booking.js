@@ -29,54 +29,54 @@
   const SERVICES = [
     {
       id: 'hygiene',
-      name: 'Hygiene & Cleaning',
-      desc: 'Example service copy for a cleaning visit. Confirm the treatment details with your clinic before publishing.',
-      priceLabel: 'from EGP 300',
+      name: 'Hygiene & Scaling',
+      desc: 'Gentle ultrasonic scaling to remove calculus and stubborn stain deposits, followed by fluoridated polishing and periodontal gum assessment.',
+      priceLabel: 'EGP 350',
       img: 'assets/c-cleaning.jpg',
       imgAlt: 'Dental hygiene instruments — scaler and polishing brush — arranged on a calm teal background',
       icon: null
     },
     {
       id: 'braces',
-      name: 'Braces & Orthodontics',
-      desc: 'Example service copy for braces and aligners. Replace it with the clinic’s real consultation and treatment details.',
-      priceLabel: 'Ask for consultation details',
+      name: 'Braces & Clear Aligners',
+      desc: 'Precision ceramic brackets and invisible aligner treatments planned via digital cephalometric scans with Dr. Tarek Selim.',
+      priceLabel: 'Consultation EGP 300',
       img: 'assets/c-braces.jpg',
       imgAlt: 'Dental model showing metal orthodontic brackets fitted on teeth',
       icon: null
     },
     {
       id: 'whitening',
-      name: 'Teeth Whitening',
-      desc: 'Example service copy for whitening. Confirm suitability, process and results with a qualified clinician.',
-      priceLabel: 'from EGP 900',
+      name: 'Laser & In-Office Whitening',
+      desc: '45-minute cold-light LED brightening or custom-fitted take-home trays with medical-grade desensitizing mineral glaze.',
+      priceLabel: 'from EGP 1,200',
       img: 'assets/c-whitening.jpg',
       imgAlt: 'Teeth whitening kit with LED whitening tray and whitening strips',
       icon: null
     },
     {
       id: 'kids',
-      name: 'Kids Dentistry',
-      desc: 'Example service copy for children’s appointments. Add the clinic’s actual approach and available services.',
-      priceLabel: 'from EGP 250',
+      name: 'Pediatric Dental Care',
+      desc: 'Gentle preventative care for little smiles: topical fluoride varnishes, molar fissure sealants, and calm, child-centered visits.',
+      priceLabel: 'from EGP 280',
       img: 'assets/c-kids.jpg',
       imgAlt: "Colourful children's toothbrushes and a dental care set on a mint background",
       icon: null
     },
     {
       id: 'fillings',
-      name: 'Tooth-Coloured Fillings',
-      desc: 'Example service copy for fillings. Add the materials and options the clinic actually offers.',
-      priceLabel: 'from EGP 400',
+      name: 'Tooth-Coloured Composite Fillings',
+      desc: 'Micro-hybrid nano-composite resin layered to match your exact enamel shade and cured with blue LED — zero mercury amalgam.',
+      priceLabel: 'from EGP 450',
       img: null,
       imgAlt: null,
       icon: 'tooth'
     },
     {
       id: 'emergency',
-      name: 'Emergency Care',
-      desc: 'Example service copy for urgent care. Add your actual availability and emergency instructions.',
-      priceLabel: 'Ask about availability',
+      name: 'Emergency Dental Relief',
+      desc: 'Same-day clinical triage for acute toothaches, fractured cusps, lost restorations, or abscesses. Priority walk-in slots reserved daily.',
+      priceLabel: 'Same-day triage EGP 350',
       img: null,
       imgAlt: null,
       icon: 'shield'
@@ -195,7 +195,7 @@
 
     const media = svc.img
       ? '<div class="svc-media"><img src="' + svc.img + '" alt="' + svc.imgAlt + '" ' +
-        'width="800" height="500" loading="lazy" decoding="async"></div>'
+        'width="800" height="500" decoding="async"></div>'
       : '<div class="svc-tile" aria-hidden="true">' + (ICONS[svc.icon] || ICONS.tooth) + '</div>';
 
     card.innerHTML =

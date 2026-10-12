@@ -72,7 +72,7 @@
     return (
       '<article class="product' + (p.stock ? '' : ' is-out') + '">' +
         '<div class="product__media">' + badge +
-          '<img src="' + esc(p.img) + '" alt="' + esc(p.imgAlt) + '" width="800" height="600" loading="lazy" decoding="async">' +
+          '<img src="' + esc(p.img) + '" alt="' + esc(p.imgAlt) + '" width="800" height="600" decoding="async">' +
         '</div>' +
         '<div class="product__body">' +
           '<p class="product__brand">' + esc(BRAND_LABELS[p.brand] || p.brand) + ' · ' + esc(CAT_LABELS[p.cat] || p.cat) + '</p>' +

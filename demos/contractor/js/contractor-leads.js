@@ -18,28 +18,28 @@
      ============================================================ */
   var SERVICES = [
     {
-      title: 'New Builds',
-      description: 'A sample service card for ground-up residential and commercial construction. Replace with your actual scope and credentials.'
+      title: 'Turnkey New Builds',
+      description: 'Ground-up residential and commercial construction from excavation and reinforced concrete casting to exterior stone cladding, built to Egyptian Code standards.'
     },
     {
-      title: 'Renovations & Remodels',
-      description: 'A sample service card for home and unit renovations, ready to be tailored to your team’s process.'
+      title: 'Structural Renovations',
+      description: 'Complete apartment and villa overhauls, structural load assessments, and layout reconfigurations overseen by licensed civil engineers with milestone sign-offs.'
     },
     {
-      title: 'Kitchen & Bathroom Fit-Outs',
-      description: 'A sample service card for tiling, plumbing, joinery and lighting work.'
+      title: 'Luxury Interior Fit-Outs',
+      description: 'Precision marble installation, concealed MEP ducting, soundproof acoustic gypsum, and custom millwork delivered by dedicated specialist trade crews.'
     },
     {
-      title: 'Office Fit-Outs',
-      description: 'A sample service card for partitions, flooring, MEP and joinery for workplaces.'
+      title: 'Commercial & Office Works',
+      description: 'Glass partitions, raised technical flooring, fire suppression integration, and network cabling delivered on accelerated schedules with minimal downtime.'
     },
     {
-      title: 'Landscaping & Exteriors',
-      description: 'A sample service card for gardens, pergolas, façades and external finishes.'
+      title: 'Façades & Landscapes',
+      description: 'Hashma and limestone stone cladding, weather-sealed exterior insulation, automated irrigation, and steel pergolas engineered for Egyptian heat and dust.'
     },
     {
-      title: 'Maintenance Contracts',
-      description: 'A sample service card for recurring maintenance plans and repair requests.'
+      title: 'Facility Maintenance',
+      description: 'Scheduled preventive MEP servicing, rooftop waterproofing audits, and priority emergency repairs for compounds, commercial clinics, and headquarters.'
     }
   ];
 
@@ -433,7 +433,6 @@
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      elements.forEach(function (el) { el.classList.add('is-visible'); });
       return;
     }
 
@@ -445,11 +444,19 @@
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px 100px 0px'
     });
 
-    elements.forEach(function (el) { observer.observe(el); });
+    elements.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('is-visible');
+      } else {
+        el.classList.add('reveal-pending');
+        observer.observe(el);
+      }
+    });
   }
 
   /* ============================================================
