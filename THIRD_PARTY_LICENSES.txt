@@ -1,0 +1,48 @@
+El-Peak Studio · third-party licences for everything this site ships
+====================================================================
+
+1. FONTS — SIL Open Font License 1.1
+   Shipped under assets/fonts/:
+   - Archivo (variable, latin) — Copyright [TODO: confirm year] Omnibus-Type
+   - IBM Plex Sans (latin, 400/500/600) — Copyright IBM Corp.
+   - IBM Plex Sans Arabic (400/500/700) — Copyright IBM Corp.
+   - JetBrains Mono (latin, 400/500) — Copyright JetBrains s.r.o.
+   All are licensed under the SIL Open Font License 1.1. The OFL requires
+   the licence text to accompany the font files: keep a copy at
+   assets/licenses/OFL-1.1.txt [TODO: owner copies the licence text from
+   each font's official repository — they are identical for all four].
+   The fonts may be embedded and used commercially; they may not be sold
+   by themselves. Reserved font names apply to modified versions (we ship
+   the originals unmodified).
+
+2. ICONS
+   All icons on the page are original inline SVG drawings made for this
+   project (one stroke width, one corner style, drawn to match the studio's
+   design system). No third-party icon set is bundled, so no third-party
+   icon licence applies to this delivery. If icons derived from Lucide
+   (ISC licence) or Feather (MIT) are ever added, their licence text must
+   be pasted into this file first.
+
+3. CODE
+   All HTML, CSS and JavaScript in this delivery is original work written
+   for El-Peak Studio. No framework, library or copied snippet is included.
+
+4. IMAGES
+   No photographs ship yet. Each photograph's source, photographer, licence
+   and download date will be recorded in assets/img/SOURCES.txt at download
+   time. The favicon, the header brand mark and the OG image are SVG
+   recreations of the owner's own logo artwork, provided by the owner. The
+   owner holds all rights to the mark and to this recreation; no
+   third-party licence applies to it.
+
+5. WHATSAPP TRADEMARK
+   "WhatsApp" appears on this site only to name the contact channel, with
+   a generic chat icon rather than the WhatsApp logo. WhatsApp is a
+   trademark of its respective owner; this site claims no affiliation or
+   endorsement. [TODO: owner to verify current Meta brand guidelines and
+   the footer credit wording.]
+
+6. NOT LEGAL ADVICE
+   This file records licences as shipped; it is not legal advice. The
+   owner should have the final package reviewed as part of the legal
+   review of the privacy and terms pages.

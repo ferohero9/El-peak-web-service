@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0F1112"/>
+  <!-- faithful charcoal-on-black. Accessible alternative: stroke="#5C666B" (3.2:1) -->
+  <path d="M6 24 L13 8 L16 17 L19.5 10 L26 24" fill="none" stroke="#343A3D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

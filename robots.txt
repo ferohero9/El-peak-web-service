@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://el-peak.cloud/sitemap.xml
+# [TODO: owner confirm the final domain before publishing]

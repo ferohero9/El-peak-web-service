@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- [TODO: owner confirm the final domain before publishing] -->
+  <url>
+    <loc>https://el-peak.cloud/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://el-peak.cloud/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://el-peak.cloud/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://el-peak.cloud/"/>
+  </url>
+  <url>
+    <loc>https://el-peak.cloud/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://el-peak.cloud/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://el-peak.cloud/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://el-peak.cloud/"/>
+  </url>
+  <url>
+    <loc>https://el-peak.cloud/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://el-peak.cloud/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://el-peak.cloud/ar/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://el-peak.cloud/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://el-peak.cloud/ar/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://el-peak.cloud/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://el-peak.cloud/ar/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://el-peak.cloud/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://el-peak.cloud/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://el-peak.cloud/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://el-peak.cloud/ar/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://el-peak.cloud/terms.html"/>
+  </url>
+  <url>
+    <loc>https://el-peak.cloud/ar/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://el-peak.cloud/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://el-peak.cloud/ar/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://el-peak.cloud/terms.html"/>
+  </url>
+  <url><loc>https://el-peak.cloud/demos/restaurant/index.html</loc></url>
+  <url><loc>https://el-peak.cloud/demos/electronics/index.html</loc></url>
+  <url><loc>https://el-peak.cloud/demos/clinic/index.html</loc></url>
+  <url><loc>https://el-peak.cloud/demos/contractor/index.html</loc></url>
+</urlset>

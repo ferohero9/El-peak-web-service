@@ -1,0 +1,79 @@
+El-Peak Studio · record of image sources
+========================================
+Every photograph shipped with this site is listed here with its source URL,
+photographer, licence and download date, even where the licence does not
+require attribution. Fill in one block per file WHEN it is downloaded.
+Never hotlink: always download, optimize, and self-host.
+
+STATUS: no photographs ship with this delivery. Until the four demo photos
+are sourced, each <picture> falls back to a tinted block in the brand
+palette and the layout stays intact (width/height are declared, so there
+is no layout shift either way).
+
+--------------------------------------------------------------------------
+FILE 1 · assets/img/demo-restaurant-480/800/1200 .avif/.webp/.jpg
+          + demo-restaurant-m-480 .avif/.webp/.jpg (mobile crop)
+Subject: working restaurant kitchen or grill, or a laid mezze table
+Source URL:      [TODO]
+Photographer:    [TODO]
+Licence:         [TODO — must permit commercial use (Unsplash / Pexels / Pixabay)]
+Download date:   [TODO]
+Checked on download: no recognizable faces · no logos or shop signs · no
+product trademarks · no license plates · no street names or house numbers ·
+no text baked into the image.
+
+FILE 2 · assets/img/demo-electronics-*  (same 9-file pattern)
+Subject: phone and accessories shop counter or shelving, or a repair bench
+Source URL:      [TODO]
+Photographer:    [TODO]
+Licence:         [TODO]
+Download date:   [TODO]
+Checked: same list as File 1 (watch for phone brand logos on devices).
+
+FILE 3 · assets/img/demo-clinic-*  (same 9-file pattern)
+Subject: clean, bright dental treatment room (chair, lamp, instruments)
+Source URL:      [TODO]
+Photographer:    [TODO]
+Licence:         [TODO]
+Download date:   [TODO]
+Checked: same list as File 1 (no patients, no before/after imagery, no
+readable patient data on any screen or printout).
+
+FILE 4 · assets/img/demo-contractor-800.jpg
+Subject: interior fit-out in progress
+Source: demos/contractor/assets/x-interior.jpg
+Licence: Commercial open / project asset
+Download date: October 2026
+Photographer:    [TODO]
+Licence:         [TODO]
+Download date:   [TODO]
+Checked: same list as File 1 (no signage, no site papers showing addresses).
+
+--------------------------------------------------------------------------
+SHOT LIST · production spec
+- Aspect ratio: 4:3 desktop crop. Mobile art-directed crop: 3:4, centered on
+  the subject, saved as the -m-480 variants.
+- Widths: 480w, 800w, 1200w. Formats: AVIF + WebP + JPEG fallback.
+- Budget: 800w WebP under 120 KB each; 1200w WebP under 200 KB; JPEG
+  fallback roughly 1.5x the WebP size.
+- Alt text for each photo is already written in both index pages; adjust it
+  if the final photo differs from the described scene.
+
+1. demo-restaurant — warm light, food-focused: a working grill with flames,
+   skewers over coals, or a top-down mezze table. Depth and texture over
+   people. Search: "restaurant kitchen grill", "kebab grill close",
+   "mezze table top view". Avoid: chefs' faces, readable menus, branded
+   packaging, alcohol in frame.
+2. demo-electronics — tidy commerce: shop counter with boxed accessories,
+   glass shelving, or a repair bench with tools laid out. Search: "phone
+   repair bench tools", "mobile shop shelves", "electronics counter
+   display". Avoid: visible phone brands/logos, screens showing branded
+   UIs, price tags with readable text.
+3. demo-clinic — bright, empty, calm: treatment chair, overhead lamp,
+   instrument tray, clean surfaces. Search: "dental clinic room empty",
+   "dentist chair lamp", "dental treatment room bright". Avoid: patients,
+   close-up instruments in mouths, x-rays, equipment brand names.
+4. demo-contractor — honest work in progress: metal stud framing, scaffolding
+   inside a shell, or fresh plasterwork with trowel marks. Search: "interior
+   fit out framing", "drywall construction interior", "plastering wall
+   progress". Avoid: faces, signage, address plates, exposed wiring drama.
