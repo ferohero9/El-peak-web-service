@@ -4,26 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Page not found · El-Peak Studio</title>
-<meta name="description" content="The page you asked for does not exist. Head back to the El-Peak Studio homepage, in English or Arabic.">
+<meta name="description" content="The page you requested does not exist. Return to the El-Peak Studio homepage, in English or Arabic.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#F7F4EE">
 <meta name="color-scheme" content="light">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<!-- Absolute paths throughout: a 404 page is served at every possible URL on
-     the domain, so relative paths would break. -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<script src="/assets/js/boot.js"></script>
-<script src="/assets/js/main.js" defer></script>
+<script>
+  (function () {
+    /* Determine repository base path for GitHub Pages project sites (https://<user>.github.io/<repo>/)
+       vs custom root domains (https://el-peak.cloud/).
+       Only inject base href on github.io to prevent breaking file:// and custom domains. */
+    if (window.location.protocol.indexOf('http') === 0 && window.location.hostname.indexOf('github.io') !== -1) {
+      var parts = window.location.pathname.split('/').filter(Boolean);
+      if (parts.length > 0) {
+        document.write('<' + 'base ' + 'h' + 'ref="/' + parts[0] + '/">');
+      }
+    }
+  })();
+</script>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script src="assets/js/boot.js"></script>
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 
 <header class="site-header" id="siteHeader">
   <div class="shell header-in">
-    <a class="brand" href="/" aria-label="El-Peak Studio, back to the homepage">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6" fill="#0F1112"/><path d="M6 24 L13 8 L16 17 L19.5 10 L26 24" fill="none" stroke="#343A3D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <a class="brand" href="index.html" aria-label="El-Peak Studio, back to the homepage">
+      <svg class="brand-mark" viewBox="0 0 40 30" aria-hidden="true" focusable="false"><path d="M3.5 27 L14.5 4 L20 15.5 L25.5 5.5 L36.5 27" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="brand-name">El-Peak <span>Studio</span></span>
     </a>
+    <a class="lang-switch" href="ar/index.html" hreflang="ar" lang="ar">العربية</a>
     <a class="btn btn--primary btn--sm header-cta" href="https://wa.me/201012464714?text=Hi!%20I%20hit%20a%20broken%20link%20on%20your%20site" target="_blank" rel="noopener noreferrer">
       <svg class="ico ico-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.2A8 8 0 1 1 21 12Z"/><path d="M9 12h.01M12 12h.01M15 12h.01"/></svg>
       <span>WhatsApp</span>
@@ -34,17 +46,59 @@
 <main id="main">
   <div class="shell nf">
     <div class="nf-in">
-      <p class="nf-code" aria-hidden="true">4<span>0</span>4</p>
-      <h1 class="sec-title">This page does not exist.</h1>
-      <p lang="ar" dir="rtl">هذه الصفحة غير موجودة، لكن يمكنك العودة إلى الصفحة الرئيسية بأي لغة تفضلها.</p>
-      <p>The link may be old or mistyped. Nothing is lost; everything lives on the homepage.</p>
-      <div class="nf-actions">
-        <a class="btn btn--primary" href="/">
-          <span>English homepage</span>
-          <svg class="ico ico-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-        </a>
-        <a class="btn btn--ghost" href="/ar/" lang="ar">الصفحة الرئيسية بالعربية</a>
-        <a class="btn btn--quiet" href="mailto:el-peak@el-peak.cloud">Report the broken link</a>
+      <div class="nf-card">
+        <div class="nf-mat" aria-hidden="true"></div>
+        <div class="nf-header">
+          <p class="nf-badge mono">Error 404 · Page Not Found</p>
+          <p class="nf-meta mono">status: 404_not_found</p>
+        </div>
+
+        <div class="nf-body">
+          <div class="nf-display">
+            <p class="nf-code" aria-hidden="true">4<span>0</span>4</p>
+            <div class="nf-lead">
+              <h1 class="nf-title">This page does not exist.</h1>
+              <p class="nf-desc">The link you followed may be mistyped, moved, or no longer available. Everything you need is accessible from our homepage.</p>
+            </div>
+          </div>
+
+          <p class="nf-desc-ar" lang="ar" dir="rtl">الصفحة المطلوبة غير موجودة أو تم نقلها. يمكنك العودة مباشرة إلى الصفحة الرئيسية باللغة الإنجليزية أو العربية واستعراض خدماتنا ونماذجنا.</p>
+
+          <div class="nf-actions">
+            <a class="btn btn--primary" href="index.html">
+              <span>Back to Homepage</span>
+              <svg class="ico ico-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="ar/index.html" lang="ar">الصفحة الرئيسية بالعربية</a>
+            <a class="btn btn--quiet" href="mailto:el-peak@el-peak.cloud">Report link</a>
+          </div>
+
+          <div class="nf-routes">
+            <p class="nf-routes-title mono">Popular destinations</p>
+            <div class="nf-links">
+              <a class="nf-link" href="index.html#services">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                <span>Services &amp; Architecture</span>
+              </a>
+              <a class="nf-link" href="index.html#demos">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                <span>Live Demos</span>
+              </a>
+              <a class="nf-link" href="index.html#pricing">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                <span>Transparent Pricing</span>
+              </a>
+              <a class="nf-link" href="privacy.html">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                <span>Privacy Policy</span>
+              </a>
+              <a class="nf-link" href="terms.html">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                <span>Terms of Service</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -52,9 +106,36 @@
 
 <footer class="site-footer">
   <div class="shell">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <p class="brand-name">El-Peak <span>Studio</span></p>
+        <p>Custom static websites for local business in Egypt. Handcrafted, high-speed, and owned outright.</p>
+        <p class="identity">
+          El-Peak Studio · Alexandria, Egypt<br>
+          Independent Web Development &amp; Design Studio
+        </p>
+      </div>
+      <nav class="foot-col" aria-label="Footer, site">
+        <h2 class="foot-title mono">On this site</h2>
+        <ul class="foot-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#demos">Demos</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="Footer, legal">
+        <h2 class="foot-title mono">Legal small print</h2>
+        <ul class="foot-list">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="ar/index.html" hreflang="ar" lang="ar">الصفحة الرئيسية بالعربية</a></li>
+        </ul>
+      </nav>
+    </div>
     <div class="foot-bar">
-      <p>© <span id="fyear">2026</span> El-Peak Studio · el-peak.cloud</p>
-      <p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/ar/privacy.html" lang="ar">الخصوصية</a> · <a href="/ar/terms.html" lang="ar">الشروط</a></p>
+      <p>© <span id="fyear">2026</span> El-Peak Studio · Alexandria, Egypt</p>
+      <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="ar/privacy.html" lang="ar">الخصوصية</a> · <a href="ar/terms.html" lang="ar">الشروط</a></p>
       <a class="to-top mono" href="#main">
         <span>Back to top</span>
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>

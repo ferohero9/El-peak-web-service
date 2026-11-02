@@ -682,13 +682,31 @@ html:not(.js) .qp-btn{display:none}
 .doc li{position:relative;padding-inline-start:20px}
 .doc li::before{content:"";position:absolute;inset-inline-start:0;top:.66em;width:8px;height:1.5px;background:var(--clay-600)}
 .doc a{color:var(--clay-700);font-weight:500}
-/* 404 */
-.nf{min-height:calc(100vh - var(--head-h));display:grid;place-items:center;text-align:center;padding-block:var(--s12)}
+/* 404 Page Design */
+.nf{min-height:calc(100vh - var(--head-h));display:grid;place-items:center;padding-block:clamp(32px,5vw,64px)}
 @supports (min-height:100dvh){.nf{min-height:calc(100dvh - var(--head-h))}}
-.nf-in{display:grid;gap:var(--s5);justify-items:center;max-width:52ch}
-.nf-code{font-family:var(--font-display);font-size:clamp(80px,20vw,170px);font-weight:700;line-height:.9;letter-spacing:-.04em;color:var(--ink)}
+.nf-in{width:100%;max-width:760px;margin-inline:auto}
+.nf-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:clamp(24px,4vw,44px);overflow:hidden;box-shadow:var(--sh-mock)}
+.nf-mat{position:absolute;z-index:0;top:-20px;inset-inline-end:-20px;width:180px;height:180px;background:var(--sand);clip-path:polygon(0 0,calc(100% - 44px) 0,100% 44px,100% 100%,0 100%);pointer-events:none;opacity:.6}
+.nf-header{position:relative;z-index:1;display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);padding-bottom:var(--s4);border-bottom:2px solid var(--ink)}
+.nf-badge{font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;color:var(--clay-700);font-weight:600}
+[lang="ar"] .nf-badge{text-transform:none;letter-spacing:0}
+.nf-meta{font-size:var(--fs-xs);color:var(--muted)}
+.nf-body{position:relative;z-index:1;padding-block:var(--s6);display:grid;gap:var(--s5)}
+.nf-display{display:flex;align-items:baseline;gap:var(--s4);flex-wrap:wrap}
+.nf-code{font-family:var(--font-display);font-size:clamp(56px,12vw,100px);font-weight:700;line-height:.95;letter-spacing:-.04em;color:var(--ink)}
 .nf-code span{color:var(--clay-600)}
-.nf-actions{display:flex;flex-wrap:wrap;gap:var(--s3);justify-content:center}
+.nf-lead{display:grid;gap:var(--s2)}
+.nf-title{font-family:var(--font-display);font-size:var(--fs-xl);font-weight:700;letter-spacing:var(--track-head);line-height:1.15;color:var(--ink)}
+.nf-desc{font-size:var(--fs-base);color:var(--muted);line-height:var(--lh-body);max-width:54ch}
+.nf-desc-ar{font-size:var(--fs-base);color:var(--muted);line-height:1.75;padding-block-start:var(--s2);border-top:1px dashed var(--line-2)}
+.nf-actions{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;padding-top:var(--s2)}
+.nf-routes{margin-top:var(--s4);padding-top:var(--s5);border-top:1px solid var(--line);display:grid;gap:var(--s3)}
+.nf-routes-title{font-family:var(--font-mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.nf-links{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4)}
+.nf-link{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-s);color:var(--clay-700);text-decoration:none;font-weight:500;transition:color var(--dur-1) var(--ease-out)}
+.nf-link:hover{color:var(--ink)}
+.nf-link .ico{width:14px;height:14px}
 
 /* ==========================================================================
    PATCH 5 merged (remaining items) · QA hardening
